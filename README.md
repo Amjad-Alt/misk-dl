@@ -26,26 +26,26 @@ This module makes a few assumptions of your established knowledge regarding your
 
 | Assumptions                       | Resource      
 | --------------------------------- | ------------- |
-| You should be familiar with...    | [link](https://github.com/bradleyboehmke/misk-packages) | 
-| You should be familiar with...    | [link](https://github.com/bradleyboehmke/misk-packages) | 
-| You should be familiar with...    | [link](https://github.com/bradleyboehmke/misk-packages) | 
-| You should be familiar with...    | [link](https://github.com/bradleyboehmke/misk-packages) | 
+| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
+| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
+| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
+| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
 
 
 ## Schedule
 
 TBD
 
-| Session       | Description                          | Reading(s)    | Python        | R             |
-| :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: |
-| 1             | Introduction to deep learning and deep learning ingredients | TBD           | TBD           | TBD           |
-| 2             | Approaching deep learning model development | TBD           | TBD           | TBD           |
-| 3             | Computer vision and CNNs             | TBD           | TBD           | TBD           |
-| 4             | Transfer learning                    | TBD           | TBD           | TBD           |
-| 5             | Word embeddings                      | TBD           | TBD           | TBD           |
-| 6             | Collaborative filtering              | TBD           | TBD           | TBD           |
-| 7             | RNNs & LSTMs                         | TBD           | TBD           | TBD           |
-| 8            | Case study.                          | TBD           | TBD           | TBD           |
+| Session       | Description                          | Reading(s)    | Slides        | Python        | R             |
+| :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: | :-----------: |
+| 1             | Introduction to deep learning and deep learning ingredients | TBD           | TBD           | TBD           | TBD           |
+| 2             | Approaching deep learning model development | TBD           | TBD           | TBD           | TBD           |
+| 3             | Computer vision and CNNs             | TBD           | TBD           | TBD           | TBD           |
+| 4             | Transfer learning                    | TBD           | TBD           | TBD           | TBD           |
+| 5             | Word embeddings                      | TBD           | TBD           | TBD           | TBD           |
+| 6             | Collaborative filtering              | TBD           | TBD           | TBD           | TBD           |
+| 7             | RNNs & LSTMs                         | TBD           | TBD           | TBD           | TBD           |
+| 8            | Case study.                           | TBD           | TBD           | TBD           | TBD           |
 
 
 ## Extras
