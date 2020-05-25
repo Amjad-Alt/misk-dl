@@ -36,7 +36,7 @@ This module makes a few assumptions of your established knowledge regarding your
 
 TBD
 
-| Session       | Description                          | Reading(s)    | Slides        | Python        | R             |
+| Session       | Description                          | Reading(s)    | Slides        | Python        | R             
 | :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: | :-----------: |
 | 1             | Introduction to deep learning and deep learning ingredients | TBD           | TBD           | TBD           | TBD           |
 | 2             | Approaching deep learning model development | TBD           | TBD           | TBD           | TBD           |
