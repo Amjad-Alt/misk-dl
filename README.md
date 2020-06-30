@@ -36,16 +36,22 @@ This module makes a few assumptions of your established knowledge regarding your
 
 TBD
 
-| Session       | Description                          | Reading(s)    | Slides        | Python        | R             
-| :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: | :-----------: |
-| 1             | Introduction to deep learning and deep learning ingredients | TBD           | TBD           | TBD           | TBD           |
-| 2             | Approaching deep learning model development | TBD           | TBD           | TBD           | TBD           |
-| 3             | Computer vision and CNNs             | TBD           | TBD           | TBD           | TBD           |
-| 4             | Transfer learning                    | TBD           | TBD           | TBD           | TBD           |
-| 5             | Word embeddings                      | TBD           | TBD           | TBD           | TBD           |
-| 6             | Collaborative filtering              | TBD           | TBD           | TBD           | TBD           |
-| 7             | RNNs & LSTMs                         | TBD           | TBD           | TBD           | TBD           |
-| 8            | Case study.                           | TBD           | TBD           | TBD           | TBD           |
+| Session       | Description                          | Reading(s)    | Slides        | Source code       
+| :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: |
+| 1             | Introduction to deep learning and deep learning ingredients | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/01-main-ingredients.nb.html)  | TBD           | TBD           | 
+| 2             | Approaching deep learning model development                 | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/02-starter-recipe.nb.html) | TBD           | TBD           |
+| 3             | Portfolio builder: Predicting Ames, IA home sales prices    | NA  | TBD           | TBD           | 
+| 4             | Introduction to Computer vision and CNNs                    | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/04-mnist-revisited.nb.html)  | TBD           | TBD           |
+| 5             | Image generators & augmentation                             | TBD           | TBD           | TBD           |
+| 6             | Transfer learning for CNNs                                  | TBD           | TBD           | TBD           |
+| 7             | Portfolio builder: Classifying natural images               | TBD           | TBD           | TBD           |
+| 8             | Introduction to word embeddings                             | TBD           | TBD           | TBD           |
+| 9             | Pre-trained word embeddings                                 | TBD           | TBD           | TBD           |
+| 10            | Portfolio builder: Product reviews                          | TBD           | TBD           | TBD           |
+| 11            | Collaborative filtering                                     | TBD           | TBD           | TBD           |
+| 12            | Introduction to RNNs & LSTMs                                | TBD           | TBD           | TBD           |
+| 13            | Portfolio builder: Sentiment polarity with LSTMs            | TBD           | TBD           | TBD           |
+| 14            | Portfolio builder: Detecting duplicate quora questions      | TBD           | TBD           | TBD           |
 
 
 ## Extras
