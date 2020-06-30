@@ -171,7 +171,7 @@ covered this morning:
        seen after. Note that dropout in CNNs will randomly drop out entire
        feature maps
 
-```{r your-turn-define}
+```{r your-turn-define, eval=FALSE}
 model <- keras_model_sequential() %>%
   
   layer_conv_2d(filters = ____, kernel_size = ____, activation = "relu", 
@@ -197,7 +197,7 @@ model %>% compile(
 summary(model)
 ```
 
-```{r your-turn-train}
+```{r your-turn-train, eval=FALSE}
 history <- model %>% fit(
   train_images, train_labels,
   epochs = 5, 
