@@ -43,7 +43,7 @@ TBD
 | 3             | Portfolio builder: Predicting Ames, IA home sales prices    | NA  | TBD           | TBD           | 
 | 4             | Introduction to Computer vision and CNNs                    | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/04-mnist-revisited.nb.html)  | TBD           | TBD           |
 | 5             | Image generators & augmentation                             | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/05-cats-vs-dogs.nb.html)  | TBD           | TBD           |
-| 6             | Transfer learning for CNNs                                  | TBD           | TBD           | TBD           |
+| 6             | Transfer learning for CNNs                                  | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/06-transfer-learning.nb.html)  | TBD           | TBD           |
 | 7             | Portfolio builder: Classifying natural images               | TBD           | TBD           | TBD           |
 | 8             | Introduction to word embeddings                             | TBD           | TBD           | TBD           |
 | 9             | Pre-trained word embeddings                                 | TBD           | TBD           | TBD           |
