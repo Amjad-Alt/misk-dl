@@ -49,7 +49,7 @@ TBD
 | 9             | Pre-trained word embeddings                                 | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/09-pretrained-word-embeddings.nb.html) | TBD           | TBD           |
 | 10            | Portfolio builder: Product reviews                          | TBD           | TBD           | TBD           |
 | 11            | Collaborative filtering                                     | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/11-collaborative-filtering.nb.html) | TBD           | TBD           |
-| 12            | Introduction to RNNs & LSTMs                                | TBD           | TBD           | TBD           |
+| 12            | Introduction to RNNs & LSTMs                                | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/12-intro-to-lstms.nb.html) | TBD           | TBD           |
 | 13            | Portfolio builder: Sentiment polarity with LSTMs            | TBD           | TBD           | TBD           |
 | 14            | Portfolio builder: Detecting duplicate quora questions      | TBD           | TBD           | TBD           |
 
