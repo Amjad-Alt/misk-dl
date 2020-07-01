@@ -45,7 +45,7 @@ TBD
 | 5             | Image generators & augmentation                             | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/05-cats-vs-dogs.nb.html)  | TBD           | TBD           |
 | 6             | Transfer learning for CNNs                                  | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/06-transfer-learning.nb.html)  | TBD           | TBD           |
 | 7             | Portfolio builder: Classifying natural images               | TBD           | TBD           | TBD           |
-| 8             | Introduction to word embeddings                             | TBD           | TBD           | TBD           |
+| 8             | Introduction to word embeddings                             | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/08-word-embeddings.nb.html) | TBD           | TBD           |
 | 9             | Pre-trained word embeddings                                 | TBD           | TBD           | TBD           |
 | 10            | Portfolio builder: Product reviews                          | TBD           | TBD           | TBD           |
 | 11            | Collaborative filtering                                     | TBD           | TBD           | TBD           |
