@@ -58,8 +58,8 @@ TBD
 
 | Activity                      | Notebook | Source Code |
 | :---------------------------- | :--------: | :-----------: |
-| Improving generalization with k-fold cross validation       | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/99x1-validation-procedures.nb.html) | TBD |
-| Performing a grid search | TBD | TBD |
+| Improving generalization with k-fold cross validation       | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/99x1-validation-procedures.nb.html) | [.Rmd](https://github.com/misk-data-science/misk-dl/blob/master/materials/99-extras/99x1-validation-procedures.Rmd) |
+| Performing a grid search | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/99x2-imdb-grid-search.nb.html)| [.Rmd](https://github.com/misk-data-science/misk-dl/blob/master/materials/99-extras/99x2-imdb-grid-search.Rmd) |
 | Linear regression with stochastic gradient descent | TBD | TBD |
 | Diagnosing model performance with learning curves | TBD | TBD |
 | Save your models for later with serialization | TBD | TBD |
