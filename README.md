@@ -51,7 +51,7 @@ TBD
 | 11            | Collaborative filtering                                     | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/11-collaborative-filtering.nb.html) | TBD           | TBD           |
 | 12            | Introduction to RNNs & LSTMs                                | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/12-intro-to-lstms.nb.html) | TBD           | TBD           |
 | 13            | __Portfolio builder__: Sentiment polarity with LSTMs            | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/13-mini-project-lstms.nb.html) | TBD           | TBD           |
-| 14            | __Portfolio builder__: Detecting duplicate quora questions      | TBD           | TBD           | TBD           |
+| 14            | __Portfolio builder__: Detecting duplicate quora questions      | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/14-mini-project-quora.nb.html)  | TBD           | TBD           |
 
 
 ## Extras
