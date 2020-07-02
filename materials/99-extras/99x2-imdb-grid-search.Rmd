@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ggplot2::theme_set(ggplot2::theme_minimal())
 
 # clean up in case you run this multiple times
-#tfruns::clean_runs(confirm = FALSE)
+tfruns::clean_runs(confirm = FALSE)
 ```
 
 Hyperparameter tuning for DNNs tends to be a bit more involved than other ML
