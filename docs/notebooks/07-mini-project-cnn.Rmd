@@ -122,3 +122,5 @@ Leverage your neighbors' knowledge and here are some things to think about:
 Do the best you can leveraging code from the [Cats vs. Dogs](https://misk-data-science.github.io/misk-dl/notebooks/05-cats-vs-dogs.nb.html)
 and [Transfer Learning](https://misk-data-science.github.io/misk-dl/notebooks/06-transfer-learning.nb.html)
 notebooks. Much of this code will transfer over one-for-one. __Good luck!__
+
+[🏠](https://github.com/misk-data-science/misk-dl)

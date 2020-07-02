@@ -47,7 +47,7 @@ TBD
 | 7             | __Portfolio builder__: Classifying natural images               | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/07-mini-project-cnn.nb.html)  | TBD           | TBD           |
 | 8             | Introduction to word embeddings                             | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/08-word-embeddings.nb.html) | TBD           | TBD           |
 | 9             | Pre-trained word embeddings                                 | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/09-pretrained-word-embeddings.nb.html) | TBD           | TBD           |
-| 10            | __Portfolio builder__: Product reviews                          | TBD           | TBD           | TBD           |
+| 10            | __Portfolio builder__: Product reviews                          | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/10-mini-project-amazon-word-embeddings.nb.html) | TBD           | TBD           |
 | 11            | Collaborative filtering                                     | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/11-collaborative-filtering.nb.html) | TBD           | TBD           |
 | 12            | Introduction to RNNs & LSTMs                                | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/12-intro-to-lstms.nb.html) | TBD           | TBD           |
 | 13            | __Portfolio builder__: Sentiment polarity with LSTMs            | TBD           | TBD           | TBD           |
