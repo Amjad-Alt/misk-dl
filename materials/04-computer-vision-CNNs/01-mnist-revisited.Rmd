@@ -221,4 +221,4 @@ history <- model %>% fit(
   need only one hidden dense layer with far fewer units and epochs to train our
   model
   
-[🏠](https://github.com/rstudio-conf-2020/dl-keras-tf)
+[🏠](https://github.com/misk-data-science/misk-dl)

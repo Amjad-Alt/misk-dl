@@ -422,4 +422,4 @@ common computer vision (and other) tasks.
    - end-to-end training with existing CNN weights
    - end-toend training while fine-tuning latter CNN layer weights
 
-[🏠](https://github.com/rstudio-conf-2020/dl-keras-tf)
+[🏠](https://github.com/misk-data-science/misk-dl)
