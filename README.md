@@ -40,18 +40,18 @@ TBD
 | :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: |
 | 1             | Introduction to deep learning and deep learning ingredients | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/01-main-ingredients.nb.html)  | TBD           | TBD           | 
 | 2             | Approaching deep learning model development                 | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/02-starter-recipe.nb.html) | TBD           | TBD           |
-| 3             | Portfolio builder: Predicting Ames, IA home sales prices    | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/03-mini-project-ames.nb.html)  | TBD           | TBD           | 
+| 3             | __Portfolio builder__: Predicting Ames, IA home sales prices    | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/03-mini-project-ames.nb.html)  | TBD           | TBD           | 
 | 4             | Introduction to Computer vision and CNNs                    | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/04-mnist-revisited.nb.html)  | TBD           | TBD           |
 | 5             | Image generators & augmentation                             | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/05-cats-vs-dogs.nb.html)  | TBD           | TBD           |
 | 6             | Transfer learning for CNNs                                  | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/06-transfer-learning.nb.html)  | TBD           | TBD           |
-| 7             | Portfolio builder: Classifying natural images               | TBD           | TBD           | TBD           |
+| 7             | __Portfolio builder__: Classifying natural images               | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/07-mini-project-cnn.nb.html)  | TBD           | TBD           |
 | 8             | Introduction to word embeddings                             | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/08-word-embeddings.nb.html) | TBD           | TBD           |
 | 9             | Pre-trained word embeddings                                 | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/09-pretrained-word-embeddings.nb.html) | TBD           | TBD           |
-| 10            | Portfolio builder: Product reviews                          | TBD           | TBD           | TBD           |
+| 10            | __Portfolio builder__: Product reviews                          | TBD           | TBD           | TBD           |
 | 11            | Collaborative filtering                                     | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/11-collaborative-filtering.nb.html) | TBD           | TBD           |
 | 12            | Introduction to RNNs & LSTMs                                | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/12-intro-to-lstms.nb.html) | TBD           | TBD           |
-| 13            | Portfolio builder: Sentiment polarity with LSTMs            | TBD           | TBD           | TBD           |
-| 14            | Portfolio builder: Detecting duplicate quora questions      | TBD           | TBD           | TBD           |
+| 13            | __Portfolio builder__: Sentiment polarity with LSTMs            | TBD           | TBD           | TBD           |
+| 14            | __Portfolio builder__: Detecting duplicate quora questions      | TBD           | TBD           | TBD           |
 
 
 ## Extras
