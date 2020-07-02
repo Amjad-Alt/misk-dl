@@ -36,11 +36,11 @@ This module makes a few assumptions of your established knowledge regarding your
 
 TBD
 
-| Session       | Description                          | Reading(s)    | Slides        | Source code       
+| Session       | Description                          | Notebook    | Source code    | Other       
 | :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: |
 | 1             | Introduction to deep learning and deep learning ingredients | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/01-main-ingredients.nb.html)  | TBD           | TBD           | 
 | 2             | Approaching deep learning model development                 | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/02-starter-recipe.nb.html) | TBD           | TBD           |
-| 3             | Portfolio builder: Predicting Ames, IA home sales prices    | NA  | TBD           | TBD           | 
+| 3             | Portfolio builder: Predicting Ames, IA home sales prices    | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/03-mini-project-ames.nb.html)  | TBD           | TBD           | 
 | 4             | Introduction to Computer vision and CNNs                    | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/04-mnist-revisited.nb.html)  | TBD           | TBD           |
 | 5             | Image generators & augmentation                             | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/05-cats-vs-dogs.nb.html)  | TBD           | TBD           |
 | 6             | Transfer learning for CNNs                                  | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/06-transfer-learning.nb.html)  | TBD           | TBD           |
@@ -56,4 +56,12 @@ TBD
 
 ## Extras
 
-TBD
+| Activity                      | Notebook | Source Code |
+| :---------------------------- | :--------: | :-----------: |
+| Improving generalization with k-fold cross validation       | TBD | TBD |
+| Performing a grid search | TBD | TBD |
+| Linear regression with stochastic gradient descent | TBD | TBD |
+| Diagnosing model performance with learning curves | TBD | TBD |
+| Save your models for later with serialization | TBD | TBD |
+| Visualizing what CNNs learn | TBD | TBD |
+
