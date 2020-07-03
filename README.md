@@ -63,5 +63,5 @@ TBD
 | Linear regression with stochastic gradient descent | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/99x3-manual-gradient-descent.nb.html) | [.Rmd](https://github.com/misk-data-science/misk-dl/blob/master/materials/99-extras/99x3-manual-gradient-descent.Rmd) |
 | Diagnosing model performance with learning curves | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/99x4-learning-curve-diagnostics.nb.html) | [.Rmd](https://github.com/misk-data-science/misk-dl/blob/master/materials/99-extras/99x4-learning-curve-diagnostics.Rmd) |
 | Save your models for later with serialization | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/99x5-save-your-models.nb.html) | [.Rmd](https://github.com/misk-data-science/misk-dl/blob/master/materials/99-extras/99x5-save-your-models-diagnostics.Rmd) |
-| Visualizing what CNNs learn | TBD | TBD |
+| Visualizing what CNNs learn | [Notebook](https://misk-data-science.github.io/misk-dl/notebooks/99x6-visualizing-what-cnns-learn.nb.html) | [.Rmd](https://github.com/misk-data-science/misk-dl/blob/master/materials/99-extras/99x6-visualizing-what-cnns-learn.Rmd) |
 
