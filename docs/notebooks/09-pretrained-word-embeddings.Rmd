@@ -57,7 +57,7 @@ the glove.6B.zip file that contains 400K words and their associated word
 embeddings. Here, we'll use the 100 dimension word embeddings which has already
 been saved for you in the data directory. 
 
-___See the [requirements set-up notebook](http://bit.ly/dl-rqmts) for download instructions.___
+___See the [requirements set-up notebook](https://github.com/misk-data-science/misk-dl/blob/master/materials/01-intro/01-requirements.md) for download instructions.___
 
 ```{r}
 # get path to downloaded data
@@ -217,8 +217,7 @@ glue("The best epoch had a loss of {loss} and accuracy of {acc}")
 
 # When to use pre-trained models?
 
-Recall that word embeddings are often trained for language models
-[ℹ️](http://bit.ly/dl-06#2). This means the embeddings are designed to predict
+Recall that word embeddings are often trained for language models. This means the embeddings are designed to predict
 the optimal word within a phrase. This rarely generalizes well to using word
 embeddings for normal regression and classification modeling. 
 

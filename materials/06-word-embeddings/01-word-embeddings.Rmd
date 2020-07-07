@@ -45,7 +45,7 @@ can be found at http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz.
 This tends to help students better understand the entire data prep required for
 text.
 
-You can find the download instructions [here](http://bit.ly/dl-rqmts). For those
+You can find the download instructions [here](https://github.com/misk-data-science/misk-dl/blob/master/materials/01-intro/01-requirements.md). For those
 in the workshop we have already downloaded this data for you.
 
 ```{r}
@@ -154,11 +154,11 @@ ggplot(text_df, aes(text_length)) +
 Word embeddings are designed to encode general semantic relationships which can
 serve two principle purposes. The first is for ___language modeling___ which 
 aims to encode words for the purpose of predicting synonyms, sentence completion, 
-and word relationships. [ℹ️](http://bit.ly/dl-06)
+and word relationships. [ℹ️](https://misk-data-science.github.io/misk-dl/03-word-embeddings.html)
 
 Although we are not focusing on word embeddings for this purpose, I have written
 a couple helper functions to train word embeddings for this purpose. See the
-code behind these helper functions [here](https://bit.ly/32HCP1G).
+code behind these helper functions [here](https://github.com/misk-data-science/misk-dl/blob/master/materials/06-word-embeddings/helper_functions.R).
 
 ```{r}
 # clean up text and compute word embeddings
@@ -181,7 +181,7 @@ get_similar_words("horrible", word_embeddings)
 
 The other principle purpose for word embeddings is to encode text for 
 classification reasons. In this case, we train the word embeddings to take on 
-weights that optimize the classification loss function. [ℹ️](http://bit.ly/dl-06#13)
+weights that optimize the classification loss function. [ℹ️](https://misk-data-science.github.io/misk-dl/03-word-embeddings.html#13)
 
 ## Prepare data
 
@@ -450,7 +450,7 @@ row.names(embedding_wts) <- words$word
 ```
 
 The following is one of the custom functions you imported from the 
-[helper_functions.R](https://bit.ly/32HCP1G) file. You can see the word 
+[helper_functions.R](https://github.com/misk-data-science/misk-dl/blob/master/materials/06-word-embeddings/helper_functions.R) file. You can see the word 
 embeddings that most closely align to a given word are not as intuitive as those
 produced from the natural language model. However, these are the embeddings that
 optimized for the classification procedure at hand.
@@ -488,7 +488,7 @@ plotly::ggplotly(p)
    - Provide a dense, relationship rich vector representation of words.
    - We can measure similarity with cosine similarity (other distance functions
       are also used).
-   - See http://bit.ly/dl-06#12 for list of resources to go deeping into word
+   - See https://misk-data-science.github.io/misk-dl/03-word-embeddings.html#12 for list of resources to go deeping into word
      embeddings.
 
 * Data prep

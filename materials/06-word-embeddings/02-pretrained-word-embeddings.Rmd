@@ -217,8 +217,7 @@ glue("The best epoch had a loss of {loss} and accuracy of {acc}")
 
 # When to use pre-trained models?
 
-Recall that word embeddings are often trained for language models
-[ℹ️](http://bit.ly/dl-06#2). This means the embeddings are designed to predict
+Recall that word embeddings are often trained for language models. This means the embeddings are designed to predict
 the optimal word within a phrase. This rarely generalizes well to using word
 embeddings for normal regression and classification modeling. 
 
