@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Deep Learning using Keras with Tensorflow backend</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Misk Academy" />
+    <link href="libs/font-awesome-animation/font-awesome-animation-emi.css" rel="stylesheet" />
+    <script src="libs/fontawesome/js/fontawesome-all.min.js"></script>
+    <link href="libs/academicons/css/academicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide
+&lt;a href="https://github.com/misk-data-science/misk-dl"&gt;&lt;img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"&gt;&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# .font200.center[Deep Learning using Keras with Tensorflow backend]
+
+---
+class: inverse, center, middle
+
+# What are we going to cover?
+
+---
+# Modeling purposes
+
+.font130[
+.pull-left[
+* Regression
+
+* Classification
+
+* Computer vision
+
+* Recommendation systems
+
+* Natural language processing
+]
+]
+
+---
+# Model architectures
+
+.font130[
+.pull-left.opacity20[
+* Regression
+
+* Classification
+
+* Computer vision
+
+* Recommendation systems
+
+* Natural language processing
+]
+
+.pull-right[
+* Multilayer perceptron (MLP)
+
+* Convolutional neural networks (CNNs)
+
+* Transfer learning
+
+* Recurrent neural networks (RNNs)
+
+* Long-short term memory neural networks (LSTMs)
+]
+]
+
+---
+# Model gears
+
+.font130[
+
+.pull-left[
+* Tensors
+
+* Sequential vs functional models
+
+* Activation functions
+
+* Derivatives &amp; gradient descent
+
+* Backward propagation
+
+* Batches &amp; epochs
+
+]
+
+.pull-right[
+
+* Learning rate
+
+* Convolutions
+
+* Embeddings
+
+* Recurrent connections
+
+* and more!
+
+]
+
+]
+
+---
+# Workflow procedures
+
+.font130[
+
+.pull-left[
+* Data preprocessing
+
+* Data augmentation
+
+* Network architecture
+
+* Model compiling
+
+* Regularization
+
+* Hyperparameter tuning
+
+]
+
+.pull-right[
+* Callbacks procedures
+
+* Model validation
+
+* Transfer learning
+
+* Model interpretation
+
+* and more!
+
+]
+]
+
+---
+class: inverse
+
+# My objective is to...
+
+&lt;br&gt;&lt;br&gt;
+.font130.white[
+
+* Provide an intuitive understanding of the engines and architectures that drive deep learning.&lt;br&gt;&lt;br&gt;
+
+* Apply a variety of deep learning algorithms.&lt;br&gt;&lt;br&gt;
+
+* Establish a mental model of deep learning.
+]
+
+---
+# <span>&lt;i class="fas  fa-exclamation-circle faa-FALSE animated " style=" color:red;"&gt;&lt;/i&gt;</span> I assume you are...
+
+&lt;br&gt;
+
+
+.font130[New to the field of deep learning and neural networks but eager to learn.]&lt;br&gt;&lt;br&gt;
+
+--
+
+.font130[An experienced R user comfortable with both tidyverse &amp; non-tidyverse code, creating functions, and applying control (i.e. if, ifelse) and iteration (i.e. for, while) statements.]&lt;br&gt;&lt;br&gt;
+
+--
+
+.font130[Familiar with machine learning concepts such as data splitting, feature engineering, resampling procedures (i.e. k-fold cross validation), hyperparameter tuning, and model validation.]
+
+
+---
+class: inverse, center, middle
+
+# How are we going to learn?
+
+---
+# Hands-on notebooks
+
+.pull-left[
+
+.center[Active learning]
+
+&lt;img src="images/notebook-preview.gif" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+https://github.com/misk-data-science/misk-dl
+
+&lt;img src="images/material-location.png" width="1328" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Course overview
+
+.pull-left[
+
+.center[.bold[Day 1]]
+
+| Session                  |
+| :------------------------ |
+| Introduction to deep learning |
+| Approaching deep learning model development |
+| Introduction to Computer vision and CNNs |
+| Image generators &amp; augmentation  |
+| Transfer learning for CNNs |
+| Computer vision &amp; CNNs    |
+
+]
+
+
+
+.pull-right[
+
+.center[.bold[Day 2]]
+
+| Session                  |
+| :------------------------ |
+| Introduction to word embeddings |
+| Pre-trained word embeddings |
+| Collaborative filtering |
+| Introduction to RNNs &amp; LSTMs   |
+
+]
+
+&lt;br&gt;
+
+.center.bold[Along with several portfolio building projects along the way!]
+
+---
+# That's a lot of material!
+
+.pull-left[
+
+### You may be overwhelmed
+
+&lt;img src="images/drowning.gif" height="400" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+### So work together
+
+&lt;img src="images/dogs-helping.gif" height="400" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: yourturn
+# Your Turn!
+
+&lt;br&gt;
+## .font140[Meet your classmates:]
+
+.font130[
+1. What is their experience with R, machine learning, and/or deep learning?
+
+2. What programming experience other than R do they have?
+
+3. How would they like to use deep learning?
+]
+
+---
+class: yourturn
+# Your Turn!
+
+&lt;br&gt;
+## .font140[Meet your neighbors:]
+
+&lt;img src="https://media1.tenor.com/images/82ed88212e7752741e898cdd0fba7824/tenor.gif?itemid=3426841" width="85%" height="85%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# Why deep learning?
+
+---
+class: clear, center, middle
+background-image: url(images/01-ai-ml-dl-landscape.002.jpeg)
+background-size: cover
+
+---
+# Why deep learning?
+
+.font140.pull-left[
+&lt;br&gt;
+
+* .font120[Automated feature extraction]
+
+]
+
+.pull-right[
+&lt;br&gt;&lt;br&gt;
+
+&lt;img src="images/auto-feat-extract.png" width="924" style="display: block; margin: auto;" /&gt;
+
+]
+
+.footnote[Image: [Sambit Mahapatra](https://towardsdatascience.com/why-deep-learning-is-needed-over-traditional-machine-learning-1b6a99177063)]
+
+---
+# Why deep learning?
+
+.font140.pull-left[
+&lt;br&gt;
+
+* Automated feature extraction
+
+* Problem solving flexibility
+
+]
+
+.pull-right[
+&lt;br&gt;
+&lt;img src="images/prob-solve-flex.png" width="315" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Why deep learning?
+
+.font140.pull-left[
+&lt;br&gt;
+
+* Automated feature extraction
+
+* Problem solving flexibility
+
+* Scales efficiently 🧐
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;img src="images/dl-scale.png" width="367" style="display: block; margin: auto;" /&gt;
+
+]
+
+.footnote[Image: [Andrew Ng](https://www.deeplearning.ai/content/uploads/2018/09/Ng-MLY01-12.pdf)]
+
+---
+class: inverse, center, middle
+
+# Why Keras?
+
+---
+# Deep learning frameworks
+
+&lt;img src="images/01-ai-ml-dl-landscape.008.jpeg" width="2513" style="display: block; margin: auto;" /&gt;
+
+---
+# Deep learning frameworks
+
+&lt;img src="images/dl-framework-rankings.png" width="933" style="display: block; margin: auto;" /&gt;
+
+---
+# This courses DL workflow
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;img src="images/01-ai-ml-dl-landscape.010.jpeg" width="2553" style="display: block; margin: auto;" /&gt;
+
+---
+# On the shoulders of giants
+
+.pull-left[
+
+.center[Francois Chollet]
+&lt;img src="images/francois_challet.jpeg" width="40%" height="40%" style="display: block; margin: auto;" /&gt;
+
+.center[J.J. Allaire]
+&lt;img src="images/jjallaire.jpg" width="40%" height="40%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+.pull-right[
+
+&lt;img src="images/dlwithR.jpeg" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: inverse, center, middle
+
+# Ready?
+
+.center.white[_Let’s start get started!_]
+
+---
+# Origination
+
+.scrollable90[
+.pull-left[
+
+* National Institute of Standards and Technology (NIST) database
+
+* MNIST (Modified NIST)
+
+* 60,000 training images and 10,000 testing images
+
+* normalized to fit into a 28x28 pixel bounding box
+
+]
+
+.pull-right[
+
+&lt;img src="images/nist-sample-form.png" width="679" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+# Important benchmark
+
+.scrollable90[
+.pull-left[
+
+* Used as an important benchmark for image processing from 1990s - 2012
+
+* 1998: 12% error rate
+
+* 2012: 0.23% error rate
+
+* Website: http://yann.lecun.com/exdb/mnist/
+
+]
+
+.pull-right[
+
+&lt;img src="images/MNIST-benchmarks.png" width="1145" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+class: clear, center, middle
+
+.font1000.bold[`%&lt;-%`]
+
+.font300[object unpacking]
+
+---
+# zeallot <span>&lt;i class="fas  fa-box-open faa-FALSE animated "&gt;&lt;/i&gt;</span>
+
+Object unpacking mimicks tuple unpacking in Python
+
+--
+
+A simple vector
+
+
+```r
+my_name &lt;- c('Brad', 'Boehmke')
+```
+
+--
+
+.pull-left[
+
+Traditional assignment unpacking
+
+
+```r
+first &lt;- my_name[1]
+last &lt;- my_name[2]
+```
+
+]
+
+.pull-right[
+
+Object unpacking
+
+
+```r
+c(first, last) %&lt;-% my_name
+```
+
+]
+
+--
+
+Both result in:
+
+
+```r
+first
+## [1] "Brad"
+last
+## [1] "Boehmke"
+```
+
+
+
+---
+# zeallot <span>&lt;i class="fas  fa-box-open faa-FALSE animated "&gt;&lt;/i&gt;</span>
+
+
+```r
+mnist &lt;- dataset_mnist()
+str(mnist)
+## List of 2
+##  $ train:List of 2
+##   ..$ x: int [1:60000, 1:28, 1:28] 0 0 0 0 0 0 0 0 0 0 ...
+##   ..$ y: int [1:60000(1d)] 5 0 4 1 9 2 1 3 1 4 ...
+##  $ test :List of 2
+##   ..$ x: int [1:10000, 1:28, 1:28] 0 0 0 0 0 0 0 0 0 0 ...
+##   ..$ y: int [1:10000(1d)] 7 2 1 0 4 1 4 9 5 9 ...
+```
+
+.pull-left[
+
+Traditional assignment unpacking
+
+
+```r
+mnist &lt;- dataset_mnist()
+
+train_images &lt;- mnist$train$x
+train_labels &lt;- mnist$train$y
+test_images &lt;- mnist$test$x
+test_labels &lt;- mnist$test$y
+```
+
+]
+
+.pull-right[
+
+Object unpacking
+
+
+```r
+c(c(train_images, train_labels), c(test_images, test_labels)) %&lt;-% mnist
+```
+
+]
+
+---
+class: clear, center, middle
+
+.font1000.bold[Tensors]
+---
+# The .red[tensor] in TensorFlow
+
+.pull-left[
+
+&lt;img src="images/whats_a_tensor.png" width="667" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center.bold[
+_Don't worry, you actually use tensors everyday (at least everyday you use R!)_
+]
+]
+
+---
+# The .red[tensor] in TensorFlow
+
+.pull-left[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;img src="images/1D_tensor.png" width="499" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center.bold.opacity20[
+_Don't worry, you actually use tensors everyday (at least everyday you use R!)_
+]
+.center.bold.blue[Vectors are 1D tensors]
+
+]
+
+---
+# The .red[tensor] in TensorFlow
+
+.pull-left[
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;img src="images/2D_tensor.png" width="536" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center.bold.opacity20[
+_Don't worry, you actually use tensors everyday (at least everyday you use R!)_
+
+Vectors are 1D tensors
+]
+.center.bold.blue[Matrices are 2D tensors]
+
+]
+
+---
+# MNIST tensor
+
+* Since our MNIST data are gray scale it can be represented as a 2D tensor
+* We just needed to reshape it so:
+   - each column <span>&lt;i class="fas  fa-hand-point-right faa-horizontal animated " style=" color:red;"&gt;&lt;/i&gt;</span> feature
+   - each row <span>&lt;i class="fas  fa-hand-point-right faa-horizontal animated " style=" color:red;"&gt;&lt;/i&gt;</span> observation
+   
+.pull-left[
+
+.center[`array_reshape` reshapes 3D array to...]
+
+&lt;img src="images/untidy_matrix.png" width="679" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+.pull-right[
+
+.center[2D tensor]
+
+&lt;img src="images/tidy_matrix.png" width="2185" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# .red[Tensor] benefits
+
+&lt;br&gt;
+
+* .red.bold[Generalization]: Tensors generalize vectors and matrices to an arbitary
+number of dimensions,
+
+* .red.bold[Flexibility]: can hold a wide range of data dimensions,
+
+* .red.bold[Speed]: provide fast, parallel processing computations.
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+--
+
+.center.bold[_They just get a bit complicated when you start working with higher dimensions_]
+
+---
+# .red.bold[3D] Tensor
+
+.pull-left[
+
+* Represented as arrays
+
+* Sequence data
+   - time series
+   - text
+   - dim = (observations, seq steps, features)
+
+* Examples
+   - 250 days of high, low, and current stock price for 390 minutes of trading
+   in a day; dim = c(250, 390, 3)
+   - 1M tweets that can be 140 characters long and include 128 unique characters; dim = c(1M, 140, 128)
+
+]
+
+.pull-right[
+
+&lt;img src="images/3D_tensor.png" width="564" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# .red.bold[4D] Tensor
+
+.pull-left[
+
+* Represented as arrays
+
+* Image data
+   - RGB channels
+   - dim = (observations, height, width, color_depth)
+
+
+]
+
+.pull-right[
+
+&lt;img src="images/4D_tensor.png" width="745" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# .red.bold[4D] Tensor
+
+.pull-left[
+
+* Represented as arrays
+
+* Image data
+   - RGB channels
+   - dim = (observations, height, width, .red[color_depth])
+
+* Technically, we could treat our original MNIST data as a 4D tensor where
+.red[color_depth = 1]
+
+* We'll see this play out when we start working with CNNs
+
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;img src="images/untidy_matrix.png" width="679" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# .red.bold[5D] Tensor
+
+.pull-left[
+
+* Represented as arrays
+
+* Video data
+   - samples: 4 (each video is 1 minute long)
+   - frames: 240 (4 frames/second)
+   - width: 256 (pixels)
+   - height: 144 (pixels)
+   - channels: 3 (red, green, blue)
+   
+* Tensor shape (4, 240, 256, 144, 3)   
+
+]
+
+.pull-right[
+
+&lt;img src="images/5D_tensor.jpg" width="853" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Now you know what tensors are
+
+.pull-left[
+
+&lt;br&gt;
+
+* Tensors aren't that bad, humans are just really bad at visualizing multiple dimensions! 
+
+* Feeling comfortable will come with practice
+
+]
+
+.pull-right[
+
+&lt;br&gt;
+
+&lt;img src="images/tensors_everywhere.jpeg" width="573" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: clear, center, middle
+
+.font500.bold[Network architecture]
+
+---
+# Sequential vs functional
+
+.pull-left[
+
+&lt;img src="images/sequential_model.png" width="607" style="display: block; margin: auto;" /&gt;
+
+* Creating a single linear stack of layers
+* Most common type of neural networks
+* Examples:
+   - Predicting sales price based on tabular data of home characteristics,
+   - Predicting animal based on image,
+   - Predicting author based on text,
+   - Predicting hurricane path based on numeric meteorologic data.
+
+]
+
+--
+
+.pull-right[
+
+&lt;img src="images/functional_model.png" width="769" style="display: block; margin: auto;" /&gt;
+
+* More advanced modeling
+* Allows flexible, customizable model structures
+* Examples:
+   - Predicting presence of cancer based on images &lt;u&gt;.bold[_and_]&lt;/u&gt; patient 
+   transcripts,
+   - Forecasting time &lt;u&gt;.bold[_and_]&lt;/u&gt; volume of sale based on tabular 
+   transaction data &lt;u&gt;.bold[_and_]&lt;/u&gt; customer text.
+
+]
+
+---
+# Densely connected layers
+
+.pull-left[
+* `layer_dense()` is creating what's called a .bold[_fully connected feed forward neural network_]
+
+* Fundamental building block of nearly all deep learning models
+]
+
+.pull-right[
+&lt;img src="images/basic_mlp.png" width="728" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Densely connected layers
+
+.pull-left[
+* `layer_dense()` is creating what's called a .bold[_fully connected feed forward neural network_]
+
+* Fundamental building block of nearly all deep learning models
+
+* So why do we call `layer_dense()` twice?  And what about the arguments inside?
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+* layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+* layer_dense(units = 10, activation = 'softmax')
+```
+
+]
+
+.pull-right[
+&lt;img src="images/basic_mlp.png" width="728" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Densely connected layers
+
+.pull-left[
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+* layer_dense() %&gt;% # hidden layer
+* layer_dense() # output layer
+```
+
+* .font100[Each `layer_dense()` represents a hidden layer or the final output layer]
+
+]
+
+.pull-right[
+&lt;img src="images/basic_mlp.png" width="728" style="display: block; margin: auto;" /&gt;
+
+]
+
+&lt;br&gt;
+
+.center[.content-box-grey[We refer to a neural network with one or more hidden layer as a .blue[_multi-layer perceptron_]]]
+
+---
+# Densely connected layers
+
+.pull-left[
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+* layer_dense() %&gt;% # hidden layer 1
+* layer_dense() %&gt;% # hidden layer 2
+* layer_dense() %&gt;% # hidden layer 3
+* layer_dense() # output layer
+```
+
+* We can add multiple hidden layers by adding more `layer_dense()` functions
+
+* Technically, .blue[_deep learning_] refers to any neural network that has 
+2 or more hidden layers
+
+* The last `layer_dense()` will always represent the output layer
+
+]
+
+.pull-right[
+&lt;img src="images/basic_feedforward.png" width="960" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Hidden layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+* layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) # hidden layer
+```
+
+--
+
+.pull-left[
+
+* `units = 512`: number of nodes in the given layer
+
+* `input_shape = ncol(train_images)`
+   - tells the first hidden layer how many input features there are
+   - only required for the first `layer_dense`
+
+]
+
+.pull-right[
+&lt;img src="images/hidden_layer.png" width="715" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Hidden layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+* layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) # hidden layer
+```
+
+.pull-left[
+
+* `units = 512`: number of nodes in the given layer
+
+* `input_shape = ncol(train_images)`
+   - tells the first hidden layer how many input features there are
+   - only required for the first `layer_dense`
+
+* `activation`: <span style=" display: -moz-inline-stack; display: inline-block; transform: rotate(0deg);">&lt;img src="https://emojis.slackmojis.com/emojis/images/1499373537/2585/homer_thinking.png?1499373537" style="height:1em; width:auto; "/&gt;</span>
+]
+
+.pull-right[
+&lt;img src="images/perceptron_zoom.png" width="739" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Individual perceptron
+
+.font100.pull-left[
+
+* There is a two-step computation process when data goes through a node
+
+]
+
+.pull-right[
+&lt;img src="images/perceptron1.png" width="699" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Individual perceptron
+
+.font100.pull-left[
+
+* There is a two-step computation process when data goes through a node
+
+* Step 1: _linear transformation_
+   - `\(z = w_0b_0 + w_1x_1 + w_2x_2 + \cdots + w_nx_n\)`
+   - note the extra bias term which is typically always set to 1
+
+]
+
+.pull-right[
+&lt;img src="images/perceptron2.png" width="704" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Individual perceptron
+
+.pull-left[
+
+* There is a two-step computation process when data goes through a node
+
+* .opacity20[Step 1: linear transformation]
+
+* Step 2: _activation function_
+   - in hidden layers, the most common activation function is the `\(\text{ReLU} = max(0, z)\)`
+   - You will be introduced to other activation functions but ReLU should nearly
+   always be your default for hidden layers
+   
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-41-1.png" style="display: block; margin: auto;" /&gt;
+   
+
+]
+
+.pull-right[
+&lt;img src="images/perceptron3.png" width="701" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Many ReLU transformations
+
+.pull-left[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-43-1.png" style="display: block; margin: auto;" /&gt;
+   
+How can a simple semi-linear transformation work so well?
+
+]
+
+---
+# Many ReLU transformations
+
+.pull-left[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-44-1.png" style="display: block; margin: auto;" /&gt;
+   
+How can a simple semi-linear transformation work so well?
+
+* Many simple geometric transformations can produce very complex patterns.
+
+* Other benefits (see [Glorot et al. (2011)](http://proceedings.mlr.press/v15/glorot11a/glorot11a.pdf)):
+   - computational simplicity
+   - representational sparcity
+   - linear behavior
+
+]
+
+.pull-right[
+&lt;img src="images/demoui.gif" style="display: block; margin: auto;" /&gt;
+
+.right.font50[[http://apps.amandaghassaei.com/OrigamiSimulator/](http://apps.amandaghassaei.com/OrigamiSimulator/)]
+
+]
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+* layer_dense(units = 10, activation = 'softmax')
+```
+
+&lt;br&gt;&lt;br&gt;
+.center.blue.font120[Completely dependent on the type of prediction you are making]
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+  layer_dense(units = 10, activation = 'softmax')
+```
+
+.font100.pull-left[
+Two primary arguments of concern for the final output layer:
+
+1. number of units
+   - regression: `units = 1`:
+
+
+]
+
+.pull-right[
+
+&lt;img src="images/output_layer_continuous.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+  layer_dense(units = 10, activation = 'softmax')
+```
+
+.font100.pull-left[
+Two primary arguments of concern for the final output layer:
+
+1. number of units
+   - regression: `units = 1`:
+   - binary classification: `units = 1`
+
+]
+
+.pull-right[
+
+&lt;img src="images/output_layer_binary.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+* layer_dense(units = 10, activation = 'softmax')
+```
+
+.font100.pull-left[
+Two primary arguments of concern for the final output layer:
+
+1. number of units
+   - regression: `units = 1`:
+   - binary classification: `units = 1`
+   - multi-class classification: `units = n`
+
+]
+
+.pull-right[
+
+&lt;img src="images/output_layer_multi.png" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+  layer_dense(units = 10, activation = 'softmax')
+```
+
+.font100.pull-left[
+Two primary arguments of concern for the final output layer:
+
+1. .opacity20[number of units]
+2. activation function
+   - regression: `activation = NULL` (identity function)
+
+]
+
+.pull-right.center[
+
+&lt;img src="images/activation_identity.png" width="804" style="display: block; margin: auto;" /&gt;
+
+`\(y = w_0b_0 + w_1h^1_1 + w_2h^1_2 + \cdots + w_nh^1_n\)`
+
+]
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+  layer_dense(units = 10, activation = 'softmax') 
+```
+
+.font100.pull-left[
+Two primary arguments of concern for the final output layer:
+
+1. .opacity20[number of units]
+2. activation function
+   - regression: `activation = NULL` (identity function)
+   - binary classification: `activation = 'sigmoid'`
+
+]
+
+.pull-right.center[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-56-1.png" style="display: block; margin: auto;" /&gt;
+
+`\(f(y) = \frac{1}{1 + e^{-y}}\)`
+
+]
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+* layer_dense(units = 10, activation = 'softmax')
+```
+
+.font100.pull-left[
+Two primary arguments of concern for the final output layer:
+
+1. .opacity20[number of units]
+2. activation function
+   - regression: `activation = NULL` (identity function)
+   - binary classification: `activation = 'sigmoid'`
+   - multi-class classification: `activation = 'softmax'`
+
+]
+
+.pull-right.center[
+
+&lt;img src="images/softmax.png" width="800" style="display: block; margin: auto;" /&gt;
+
+`\(f(y) = \frac{e^{y_i}}{\sum_je^{y_j}}\)`
+
+]
+
+---
+# Output layer
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = ncol(train_images)) %&gt;%
+* layer_dense(units = 10, activation = 'softmax')
+```
+
+.font100.pull-left[
+Two primary arguments of concern for the final output layer:
+
+1. .opacity20[number of units]
+2. activation function
+   - regression: `activation = NULL` (identity function)
+   - binary classification: `activation = 'sigmoid'`
+   - multi-class classification: `activation = 'softmax'`
+
+]
+
+.pull-right.center[
+
+&lt;img src="images/softmax.png" width="800" style="display: block; margin: auto;" /&gt;
+
+]
+
+.center[.content-box-grey.font90.blue[_This is why we used `to_categorical()`, so that we can get the probabilities for each output class._]]
+
+---
+# Network architecture summary
+
+.pull-left-30.font80[
+
+1. A sequential, dense, fully connected neural network
+
+2. 784 inputs
+
+3. 1 hidden layer  
+   a. 512 nodes  
+   b. ReLU activation function
+&lt;br&gt;&lt;br&gt;   
+  
+4. multi-class output layer  
+   a. 10 nodes (1 for each output)  
+   b. Softmax activation function
+]
+
+.pull-right-70[
+
+&lt;img src="images/network_architecture_summary.png" width="892" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Network architecture summary
+
+.pull-left.font80[
+
+1. A sequential, dense, fully connected neural network
+
+2. 784 inputs
+
+3. 1 hidden layer  
+   a. 512 nodes  
+   b. ReLU activation function  
+   `\(params = (784 \times 512) + 512 = 401920\)`
+   
+4. multi-class output layer  
+   a. 10 nodes  
+   b. Softmax activation function  
+   `\(params = (512 \times 10) + 10 = 5130\)`
+]
+
+.pull-right[
+
+
+```r
+summary(network)
+## Model: "sequential"
+## ______________________________________________________________________________________
+## Layer (type)                          Output Shape                       Param #      
+## ======================================================================================
+## dense (Dense)                         (None, 512)                        401920       
+## ______________________________________________________________________________________
+## dense_1 (Dense)                       (None, 10)                         5130         
+## ======================================================================================
+## Total params: 407,050
+## Trainable params: 407,050
+## Non-trainable params: 0
+## ______________________________________________________________________________________
+```
+
+]
+
+---
+class: clear, center, middle
+
+.font500.bold[Network compilation]
+
+---
+# Forward pass
+
+.pull-left[
+
+]
+
+.pull-right[
+
+&lt;img src="images/forward_pass.png" width="557" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Forward pass
+
+.pull-left.font120[
+&lt;br&gt;&lt;br&gt;
+* Weights are _initialized_ as very small semi-random values
+
+]
+
+.pull-right[
+
+&lt;img src="images/forward_pass.png" width="557" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Forward pass
+
+.pull-left.font100[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+* Weights are _initialized_ as very small semi-random values
+
+* Results in predicted values that are significantly different then the actual
+targets
+
+]
+
+.pull-right[
+
+&lt;img src="images/forward_pass2.png" width="559" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Forward pass
+
+.pull-left.code70[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+* Weights are _initialized_ as very small semi-random values
+
+* Results in predicted values that are significantly different then the actual
+targets
+
+* We measure this difference with a _loss function_
+
+
+```r
+network %&gt;% compile(
+* loss = "categorical_crossentropy",
+  optimizer = "rmsprop",
+  metrics = c("accuracy")
+)
+```
+
+
+]
+
+.pull-right[
+
+&lt;img src="images/forward_pass3.png" width="561" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Loss function
+
+_Loss function (objective function)_ : the quantity that will be minimized during training.
+
+.pull-left[
+
+* Many options
+
+* Should use the one that aligns best to the problem at hand; however,...
+
+]
+
+.pull-right[
+
+* mean squared error (MSE)
+* mean absolute error (MAE)
+* mean absolute percentage error (MAPE)
+* mean squared logarithmic error (MSLE)
+* squared hinge
+* log cosine hinge
+* binary cross entropy
+* categorical hinge
+* categorical crossentropy
+* sparse categorical crossentropy
+* Kullback-Leibler divergence
+* Poisson
+* cosine proximity
+* can even build your own custom loss functions!
+
+]
+
+---
+# Loss function
+
+_Loss function (objective function)_ : the quantity that will be minimized during training.
+
+.pull-left[
+
+* Many options
+
+* Should use the one that aligns best to the problem at hand; however,...
+
+* general recommendations for common problems include:
+   - Regression: MSE
+   - Binary classification: binary crossentropy
+   - Multi-class classification: categorical crossentropy
+
+]
+
+.pull-right[
+
+* .blue[mean squared error (MSE)]
+* mean absolute error (MAE)
+* mean absolute percentage error (MAPE)
+* mean squared logarithmic error (MSLE)
+* squared hinge
+* log cosine hinge
+* .blue[binary cross entropy]
+* categorical hinge
+* .blue[categorical crossentropy]
+* sparse categorical crossentropy
+* Kullback-Leibler divergence
+* Poisson
+* cosine proximity
+* can even build your own custom loss functions!
+
+]
+
+---
+# Loss function
+
+_Loss function (objective function)_ : the quantity that will be minimized during training.
+
+.pull-left[
+
+* Many options
+
+* Should use the one that aligns best to the problem at hand; however,...
+
+* general recommendations for common problems include:
+   - Regression: MSE
+   - Binary classification: binary crossentropy
+   - Multi-class classification: categorical crossentropy
+
+   
+.center[.content-box-grey.font80[_All three heavily penalize bad predictions!_]]
+
+]
+
+.pull-right[
+
+* .blue[mean squared error (MSE)]
+* mean absolute error (MAE)
+* mean absolute percentage error (MAPE)
+* mean squared logarithmic error (MSLE)
+* squared hinge
+* log cosine hinge
+* .blue[binary cross entropy]
+* categorical hinge
+* .blue[categorical crossentropy]
+* sparse categorical crossentropy
+* Kullback-Leibler divergence
+* Poisson
+* cosine proximity
+* can even build your own custom loss functions!
+
+]
+
+---
+# Loss function
+
+.pull-left[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center.blue.bold[_Our goal is to find weights that minimize the loss score_]
+
+]
+
+.pull-right[
+
+&lt;img src="images/forward_pass4.png" width="568" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Backward pass
+
+.pull-left[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center.blue.bold[_Our goal is to find weights that minimize the loss score_]
+
+The ___backward pass___ is the process of using information from the loss function
+to update the weights so that we improve the model's performance.
+
+]
+
+.pull-right[
+
+&lt;img src="images/backward_pass.png" width="564" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Backward pass example
+
+.pull-left[
+&lt;img src="images/backward_pass_ex1.png" width="747" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Backward pass example
+
+.pull-left[
+&lt;img src="images/backward_pass_ex2.png" width="749" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Backward pass example
+
+.pull-left[
+&lt;img src="images/backward_pass_ex3.png" width="751" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Backward pass example
+
+.pull-left[
+&lt;img src="images/backward_pass_ex4.png" width="751" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-74-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+# Derivatives
+
+_Sensitivity_ is just the change in one thing per 1 unit change in another
+
+
+.pull-left[
+.font100[
+$$= \frac{\text{Change in temperature error}}{\text{Change in shower handle position}} $$
+]
+&lt;br&gt;
+.font100[
+$$= \frac{\Delta \text{temperature error}}{\Delta \text{shower handle position}} $$
+]
+]
+
+.pull-right[
+&lt;br&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-75-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Derivatives
+
+_Sensitivity_ is just the change in one thing per 1 unit change in another
+
+
+.pull-left[
+.font100[
+$$= \frac{\text{Change in temperature error}}{\text{Change in shower handle position}} $$
+]
+&lt;br&gt;
+.font100[
+$$= \frac{\Delta \text{temperature error}}{\Delta \text{shower handle position}} $$
+]
+]
+
+.pull-right[
+&lt;br&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-76-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+&lt;br&gt;
+
+.center[.content-box-grey[Sensitivity is not always linear.]]
+
+
+
+---
+# Derivatives
+
+_Sensitivity_ is just the change in one thing per 1 unit change in another
+
+.pull-left[
+.font100[
+$$= \frac{\text{Change in temperature}}{\text{Change in shower handle position}} $$
+]
+&lt;br&gt;
+.font100[
+$$= \frac{\Delta \text{temperature}}{\Delta \text{shower handle position}} $$
+]
+&lt;br&gt;
+.font100[
+$$= \frac{\text{d(temperature)}}{\text{d(shower handle position)}} $$
+
+]
+]
+
+.pull-right[
+
+&lt;br&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-77-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# More than one variable?
+
+What if we have more than one variable?
+
+.pull-left[
+
+&lt;img src="images/hot_and_cold.png" width="419" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+.pull-right[
+
+
+```
+## 'RandomFieldsUtils' will NOT use OMP
+## 'RandomFields' will NOT use OMP
+```
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-79-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Partial derivatives
+
+What if we have more than one variable?
+
+.pull-left[
+.font100[
+$$= \frac{\text{Change in temperature}}{\text{Change in shower handle position}} $$
+]
+&lt;br&gt;
+.font100[
+$$= \frac{\Delta \text{temperature}}{\Delta \text{shower handle position}} $$
+]
+&lt;br&gt;
+.font100[
+$$= \frac{\partial \text{ temperature}}{\partial \text{ shower handle position}} $$
+
+]
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-80-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Gradient descent
+
+.pull-left[
+
+* We can use derivative information to point us in the right direction.
+
+* Stepping in the opposite direction of the partial derivative leads us to the 
+minimum.
+
+* The size of the step is called our ___learning rate ( `\(\eta\)` )___ .white[
+
+   - Too small: will take forever to converge
+   - Too big: risk never finding the minimum]
+   
+`$$-\eta \text{ }\frac{\partial \text{ temperature}}{\partial \text{ shower handle position}}$$`
+
+]
+
+.pull-right[
+
+&lt;br&gt;
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-81-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Gradient descent
+
+.pull-left[
+
+* We can use derivative information to point us in the right direction.
+
+* Stepping in the opposite direction of the partial derivative leads us to the 
+minimum.
+
+* The size of the step is called our ___learning rate ( `\(\eta\)` )___
+
+   - Too small: will take forever to converge
+   - Too big: risk jumping over the minimum
+   
+`$$-\eta \text{ }\frac{\partial \text{ temperature}}{\partial \text{ shower handle position}}$$`
+
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-82-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Chain rule
+
+.pull-left[
+
+* However, typically our problems have many layers of transformations `\(\rightarrow \hat y = f(g(x))\)`.
+
+* The ___chain rule___ states that we can compute partial derivatives for each
+layer as `\(\partial \text{layer}_2 \times \partial \text{layer}_1 \Rightarrow \partial f(g(x)) \times \partial g(x)\)`
+
+* Consequently, we can compute the following:
+   - `\(\Delta s = -\eta \frac{\partial \hat{y}}{\partial s} \cdot \frac{\partial E}{\partial \hat{y}}\)` 
+   - `\(\Delta m = -\eta \frac{\partial h}{\partial m} \cdot \frac{\partial \hat{y}}{\partial h} \cdot \frac{\partial E}{\partial \hat{y}}\)` 
+
+]
+
+.pull-right[
+
+&lt;img src="images/multi-layer-shower.png" width="809" style="display: block; margin: auto;" /&gt;
+
+]
+&lt;br&gt;&lt;br&gt;
+
+--
+
+.center[.content-box-grey[_m_ and _s_ simply represent the weights of the first and second layer of a hypothetical neural net.]]
+
+---
+# Backpropagation
+
+.pull-left[
+
+* This updating of our weights is what is called ___backpropagation___.
+
+* This simple example illustrated basic gradient descent backpropagation.
+
+* There have been several algorithms developed that slightly modify and _optimize_ this approach [<span>&lt;i class="ai  ai-google-scholar faa-tada animated-hover "&gt;&lt;/i&gt;(Sebastian Ruder)</span>](http://ruder.io/optimizing-gradient-descent/).
+
+* A main differentiating component is ___momentum___.
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-84-1.gif" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Backpropagation
+
+.pull-left[
+
+* This updating of our weights is what is called ___backpropagation___.
+
+* This simple example illustrated basic gradient descent backpropagation.
+
+* There have been several algorithms developed that slightly modify and _optimize_ this approach [<span>&lt;i class="ai  ai-google-scholar faa-tada animated-hover "&gt;&lt;/i&gt;(Sebastian Ruder)</span>](http://ruder.io/optimizing-gradient-descent/).
+
+* A main differentiating component is ___momentum___.
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="images/saddle_point_evaluation_optimizers.gif" style="display: block; margin: auto;" /&gt;
+
+.right.font50[[Sebastian Ruder (2016)](https://ruder.io/optimizing-gradient-descent/)]
+]
+
+
+
+---
+# Backpropagation
+
+.pull-left[
+
+* This updating of our weights is what is called ___backpropagation___.
+
+* This simple example illustrates basic gradient descent backpropagation.
+
+* There have been several algorithms developed that slightly modify and _optimize_ this approach [<span>&lt;i class="ai  ai-google-scholar faa-tada animated-hover "&gt;&lt;/i&gt;(Sebastian Ruder)</span>](http://ruder.io/optimizing-gradient-descent/).
+
+* A main differentiating component is ___momentum___.
+
+
+
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+```r
+network %&gt;% compile(
+  loss = "categorical_crossentropy",
+* optimizer = "rmsprop",
+  metrics = c("accuracy")
+)
+```
+
+]
+
+.center[.content-box-grey[RMSprop &amp; Adam are two great default optimizers.]]
+
+---
+# Tracking additional metrics
+
+In addition to the loss function, there are many other metrics we can track.
+
+.pull-left[
+
+* mean squared error (MSE)
+* mean absolute error (MAE)
+* mean absolute percentage error (MAPE)
+* mean squared logarithmic error (MSLE)
+* squared hinge
+* log cosine hinge
+* overall accuracy
+* binary cross entropy
+* categorical hinge
+* categorical cross entropy
+* sparse categorical cross entropy
+* Kullback-Leibler divergence
+* Poisson
+* cosine proximity
+* can even build your own custom metrics to track!
+
+]
+
+---
+# Tracking additional metrics
+
+In addition to the loss function, there are many other metrics we can track.
+
+.pull-left[
+
+* mean squared error (MSE)
+* mean absolute error (MAE)
+* mean absolute percentage error (MAPE)
+* mean squared logarithmic error (MSLE)
+* squared hinge
+* log cosine hinge
+* .blue[overall accuracy]
+* binary cross entropy
+* categorical hinge
+* categorical cross entropy
+* sparse categorical cross entropy
+* Kullback-Leibler divergence
+* Poisson
+* cosine proximity
+* can even build your own custom metrics to track!
+
+]
+
+.pull-right[
+
+
+```r
+network %&gt;% compile(
+  loss = "categorical_crossentropy",
+  optimizer = "rmsprop", 
+* metrics = c("accuracy")
+)
+```
+
+]
+
+---
+# Network compilation summary
+
+.pull-left-narrow[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+1. Loss function
+
+2. Backpropagation optimizer
+
+3. Additional metrics tracked
+
+]
+
+.pull-right-wide[
+
+&lt;img src="images/compile_summary.png" width="861" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: clear, center, middle
+
+.font500.bold[Training loop]
+
+---
+# Supply data
+
+
+.pull-left[
+
+* We use `fit()` to start executing model training
+
+* First, we need to supply the features and target response for our training data
+
+]
+
+.pull-right[
+
+
+```r
+history &lt;- network %&gt;% 
+* fit(train_images,
+*     train_labels,
+      batch_size = 128, 
+      epochs = 20, 
+      validation_split = 0.2)
+```
+
+]
+
+---
+# 3 variants of gradient descent
+
+.pull-left[
+
+1. .bold[Batch gradient descent]
+   - computes the error for each example in the training dataset and updates the 
+     weights &lt;u&gt;after all training examples have been evaluated&lt;/u&gt;
+   - .bold.green[Pros]:
+      - Fewer updates to the model can result in computational efficiencies
+      - Aggregation of errors leads to smoother gradient descent and, often, 
+        quicker convergence
+   - .bold.red[Cons]:
+      - Scales horribly to "longer" datasets
+      - Aggregation of errors often leads to convergence at local minimums
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-90-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# 3 variants of gradient descent
+
+.pull-left[
+
+1. Batch gradient descent
+2. .bold[Stochastic gradient descent]
+   - randomly selects an individual ob, computes gradients and 
+     updates model weights &lt;u&gt;after this single observation has been evaluated&lt;/u&gt;
+   - .bold.green[Pros]:
+      - Makes individual weight updates much faster
+      - updating model on a single, random observation results in a very noisy 
+        gradient descent which helps avoid local minimums
+   - .bold.red[Cons]:
+      - Takes longer to converge which means can be computationally inefficient
+      - Noisy learning process can also make it hard for the algorithm to settle 
+        on an error minimum for the model.
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-91-1.gif" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+# 3 variants of gradient descent
+
+.pull-left[
+
+1. Batch gradient descent
+2. Stochastic gradient descent
+3. .bold[Mini-batch gradient descent]
+   - randomly selects a subset of obs, computes gradients and updates model 
+     weights &lt;u&gt;after this subset has been evaluated&lt;/u&gt;
+   - .bold.green[Pros]:
+      - Balances efficiencies of batch vs. stochastic
+      - Balances robust convergence of batch with some stochastic nature to 
+        minimize local minima.
+   - .bold.red[Cons]:
+      - One more hyperparameter to think about
+   - Most common: `\(2^s \rightarrow 32, 64, 128, 256, 512\)`
+
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-92-1.gif" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Epochs
+
+.pull-left.font110[
+
+- The number of times the learning algorithm will work through the entire 
+  training dataset.
+
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-93-1.gif" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Epochs
+
+.pull-left.font110[
+
+- The number of times the learning algorithm will work through the entire 
+  training dataset.
+  
+
+```r
+history &lt;- network %&gt;% 
+  fit(train_images,  
+      train_labels, 
+*     batch_size = 128,
+*     epochs = 20,
+      validation_split = 0.2)
+```
+  
+
+]
+
+.pull-right[
+
+&lt;img src="images/training_gif.gif" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Epochs
+
+.pull-left.font100[
+
+- The number of times the learning algorithm will work through the entire 
+  training dataset.
+  
+- Enough epochs to where we see the loss converge to a minimum  
+
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-96-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+--
+# Validation
+
+.pull-left[
+
+* If we train a large enough model, theoretically, we should be able to produce 
+  an _identity function_.
+  
+* This is not our objective!
+
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-97-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+---
+# Validation
+
+.pull-left[
+
+* If we train a large enough model, theoretically, we should be able to produce 
+  an _identity function_.
+  
+* This is not our objective!
+
+* We want to identify the model and location that minimizes loss on _unseen data_.
+
+* `validation_split` will:
+   - select the last XX% of data in our training set,
+   - score our model on this validation set at the end of each epoch
+
+]
+
+.pull-right[
+
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-98-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Training loop summary
+
+.pull-left-narrow[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+1. Training features and labels
+
+2. Size of mini batches and number epochs
+
+3. Data used as "unseen" validation data
+
+]
+
+.pull-right-wide[
+
+&lt;br&gt;
+&lt;img src="images/training_summary.png" width="897" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Now you know!
+
+.pull-left[
+
+
+```r
+network &lt;- keras_model_sequential() %&gt;%
+  layer_dense(units = 512, activation = 'relu', input_shape = c(28 * 28)) %&gt;%
+  layer_dense(units = 10, activation = 'softmax')
+
+network %&gt;% compile(
+  loss = "categorical_crossentropy",
+  optimizer = "rmsprop",
+  metrics = c("accuracy")
+)
+
+history &lt;- network %&gt;% 
+  fit(train_images, train_labels, 
+      batch_size = 128, epochs = 20, 
+      validation_split = 0.2)
+```
+
+]
+
+.pull-right[
+
+&lt;img src="https://media1.tenor.com/images/8e0b403d6b9f899f5a25cb39b476c308/tenor.gif?itemid=10118626" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: clear, center, middle
+
+background-image: url(images/any-questions.jpg)
+background-position: center
+background-size: cover
+
+---
+# Back home
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+[.center[<span>&lt;i class="fas  fa-home fa-10x faa-FALSE animated "&gt;&lt;/i&gt;</span>]](https://github.com/misk-data-science/misk-dl)
+
+.center[https://github.com/misk-data-science/misk-dl]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

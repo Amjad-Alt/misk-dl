@@ -18,23 +18,30 @@ This module introduces the essential concepts of building deep learning models w
 
 ## Learning Objectives
 
-TBD
+This module will step through the process of building, visualizing, testing, and comparing common deep learning models. The goal is to expose you to building various deep learning models for common problems where deep learning tends to shine. By the end of this module you should:
+
+* Have an intuitive understanding of the engines and architectures that drive deep learning.
+
+* Be ale to apply a variety of deep learning algorithms.
+
+* Established a mental model of deep learning.
 
 ## Prework
 
-This module makes a few assumptions of your established knowledge regarding your programming skills and exposure to basic statistical concepts. Below are my assumptions and some resources to read through to make sure you are properly prepared.
+This module makes a few assumptions of your established knowledge regarding your programming skills and exposure to basic statistical concepts. Below are my assumptions and the relevant courses that you should have already attended to make sure you are properly prepared.
 
 | Assumptions                       | Resource      
-| --------------------------------- | ------------- |
-| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
-| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
-| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
-| You should be familiar with...    | [link](https://github.com/misk-data-science-misk-dl) | 
+| --------------------------------- | :-------------: |
+| Comfortable with R programming    | [link](https://github.com/misk-data-science/misk-intro-ds) | 
+| Proficient with basic data wrangling tasks    | [link](https://github.com/misk-data-science/misk-intro-ds) | 
+| Knowledgable of foundational statistics    | [link](https://github.com/misk-data-science/misk-stats-foundations) |
+| familiar with the machine learning modeling process | [link](https://github.com/misk-data-science/misk-homl) |
 
+Prior to session 1, please run the [`001-requirements.Rmd` notebook](https://github.com/misk-data-science/misk-dl/blob/master/materials/01-intro/01-requirements.md) to ensure you have the necessary packages and data assets used throughout.
 
 ## Schedule
 
-TBD
+This workshop is notebook-focused. Consequently, most of our time will be spent in R notebooks; however, I will also jump to slides to explain certain concepts in further detail. Throughout the notebooks, you will see ℹ️ icons that will hyperlink to relevant slides (or additional resources).
 
 | Session       | Description                          | Notebook    | Source code    | Other       
 | :-----------: | :----------------------------------- | :-----------: | :-----------: | :-----------: |
