@@ -124,8 +124,7 @@ relatively large compared to the randomized initial weights _and_ all our
 features should take values in roughly the same range.
 
 Consequently, we need to ___vectorize___ our data into a format conducive to neural 
-networks [ℹ️](http://bit.ly/dl-02#3). For this data set, we'll transform our
-data by:
+networks. For this data set, we'll transform our data by:
 
 1. removing any zero-variance (or near zero-variance) features
 2. condensing unique levels of categorical features to "other"

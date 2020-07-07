@@ -510,7 +510,7 @@ results. Let's make it more efficient by:
   results.
 
 __Tip__: there is another approach to performing grid searches. See the extras
-notebook https://rstudio-conf-2020.github.io/dl-keras-tf/notebooks/imdb-grid-search.nb.html
+notebook https://misk-data-science.github.io/misk-dl/notebooks/99x2-imdb-grid-search.nb.html
 for details.
 
 ```{r}
@@ -650,7 +650,7 @@ with having large weights.
 
 If you a familiar with regularized regression [ℹ️](https://misk-data-science.github.io/misk-homl/docs/06-regularized-regression.nb.html)
 (lasso, ridge, elastic nets) then weight regularization is essentially the same
-thing. [ℹ️](http://bit.ly/dl-02#23)
+thing.
 
 $$Loss = MSE + \lambda \sum^p_{j=1} w^2_j$$
 
