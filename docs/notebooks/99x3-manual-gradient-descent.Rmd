@@ -357,4 +357,3 @@ ggplot(prediction_change, aes(x, y)) +
   geom_line(aes(y = pred, group = factor(epoch)), alpha = 0.3) +
   geom_point(color = "red")
 ```
-

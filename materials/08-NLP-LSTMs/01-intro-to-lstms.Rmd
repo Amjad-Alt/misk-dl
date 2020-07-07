@@ -61,7 +61,7 @@ To model our IMDB data, we could use:
    inputs.
    
 Recurrent neural networks were specifically designed to model sequential data.
-[ℹ️](http://bit.ly/dl-08)
+[ℹ️](https://misk-data-science.github.io/misk-dl/04-recurrent-networks.html)
 
 ## Train an RNN
 
@@ -164,7 +164,7 @@ glue("The best epoch had a loss of {loss} and an accuracy of {acc}")
 
 Unfortunately, a problem with RNNs (and any very deep neural network) is as our
 network gets deep, it loses the signal due to the vanishing gradient descent
-problem. LSTMs were developed to address this problem. [ℹ️](http://bit.ly/dl-08#12)
+problem. LSTMs were developed to address this problem. [ℹ️](https://misk-data-science.github.io/misk-dl/04-recurrent-networks.html#13)
 
 ## Train an LSTM
 

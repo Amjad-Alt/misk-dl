@@ -48,7 +48,7 @@ tf$compat$v1$disable_eager_execution()
 
 # Visualizing intermediate activations
 
-Visualizing intermediate activations consists of displaying the feature maps that are output by various convolution and pooling layers in a network. This gives a view into how an input is decomposed unto the different filters learned by the network. These feature maps we want to visualize have 3 dimensions: width, height, and depth (aka channels). Each channel encodes relatively independent features, so the proper way to visualize these feature maps is by independently plotting the contents of every channel, as a 2D image. Let’s start by loading the model that we saved in the [cat vs. dog module](https://rstudio-conf-2020.github.io/dl-keras-tf/notebooks/02-cats-vs-dogs.nb.html#model-2).
+Visualizing intermediate activations consists of displaying the feature maps that are output by various convolution and pooling layers in a network. This gives a view into how an input is decomposed unto the different filters learned by the network. These feature maps we want to visualize have 3 dimensions: width, height, and depth (aka channels). Each channel encodes relatively independent features, so the proper way to visualize these feature maps is by independently plotting the contents of every channel, as a 2D image. Let’s start by loading the model that we saved in the [cat vs. dog module](https://misk-data-science.github.io/misk-dl/notebooks/05-cats-vs-dogs.nb.html#model-2).
 
 ```{r load-model}
 file_local <- here::here("materials", "04-computer-vision-CNNs", "cats_and_dogs_small_2.h5")
