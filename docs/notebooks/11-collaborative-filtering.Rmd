@@ -98,7 +98,7 @@ implement it. Here is a good [article](https://bit.ly/34sQV8g) that discusses
 the different types but they can loosely be categorized as:
 
 * Distance-based (i.e. cosine similarity, correlation)
-* Matrix factorization ([ℹ️](http://bit.ly/dl-07-Excel))
+* Matrix factorization ([ℹ️](https://github.com/misk-data-science/misk-dl/tree/master/materials/07-recommender-collaborative-filtering))
 * Clustering
 * Deep learning
 
@@ -241,7 +241,7 @@ glue("The best epoch had a loss of {loss} and mean absolute error of {mae}")
 Unfortunately, our simple model does not account for biases. For example, some
 people tend to rate everything favorably and some movies are consistently highly
 rated. We can capture this extra information by including extra bias weights in
-our model [ℹ️](http://bit.ly/dl-07-Excel).
+our model [ℹ️](https://github.com/misk-data-science/misk-dl/tree/master/materials/07-recommender-collaborative-filtering).
 
 Doing this results in a neural net architecture that looks like:
 
