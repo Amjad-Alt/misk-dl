@@ -1,0 +1,408 @@
+---
+title: "Recurrent Networks"
+author: "Misk Academy"
+date: "2020-6-26"
+output:
+  xaringan::moon_reader:
+    css: ["custom.css"]
+    self_contained: false
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    seal: false
+---
+
+class: title-slide
+<a href="https://github.com/misk-data-science/misk-dl"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+<br><br><br><br>
+
+# .font200.center[Recurrent Networks]
+
+---
+# Text is a sequence of information
+
+.pull-left[
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/sequential-text.gif")
+```
+
+]
+
+--
+
+.pull-right[
+
+Sometimes our context is nearby:
+
+_.center[I grew up in .blue[France] and speak .red[French]]_
+
+<br>
+
+Sometimes we need distant context:
+
+_.center[My father worked for the .blue[French] retailer .blue[Carrefour] and I
+grew up in a little village called .blue[La Roque-Gageac], which is on the north
+bank of the .blue[Dordogne River]. Consequently, I learned to speak .red[French]]_
+
+]
+
+---
+# RNNs
+
+.font120[RNNs are just a looping mechanism that allows us to retain information from
+previous states.]
+
+--
+
+.center[We typically see images such as this to represent RNNs:]
+
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics("https://cdn-images-1.medium.com/max/1600/1*T_ECcHZWpjn0Ki4_4BEzow.gif")
+```
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# RNNs
+
+.font120[RNNs are just a looping mechanism that allows us to retain information from
+previous states.]
+
+.center[But if we unroll this layer, its just a multi-layer perceptron:]
+
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics("images/rnn-unroll.gif")
+```
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Hidden state
+
+.pull-left[
+
+This passing of information from previous states is what we call the
+.blue[___hidden state___].
+
+It is common for the hidden state to be analogized to .blue[memory].
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*o-Cq5U8-tfa1_ve2Pf3nfg.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Hidden state
+
+.pull-left[
+
+1. The previous hidden state and the current state input are combined to form a
+vector. That vector now has information on the current input and previous inputs. 
+
+2. The vector goes through the __tanh__ activation, 
+
+3. The output is the new hidden state, or the memory of the network.
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE, out.width='110%', out.width='110%'}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*WMnFSJHzOloFlJHU6fVN-g.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Tanh activation
+
+.pull-left[
+
+The .blue[__tanh__] activation helps to keep values between -1 and 1.
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*iRlEg1GBKRzGTre5aOQUCg.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Weights
+
+.pull-left[
+
+The .blue[weights] of the network will determine what parts of the sequence to
+emphasize (aka .blue[_remember_]) to accurately predict what comes next.
+
+<br>
+
+.center[.opacity20[My father worked for the] .blue[French] .opacity20[retailer]
+.blue[Carrefour] .opacity20[and I grew up in a little village called]
+.blue[La Roque-Gageac], .opacity20[which is on the north bank of the]
+.blue[Dordogne River]. .opacity20[Consequently, I learned to speak] .red[French]]
+
+]
+
+.pull-right[
+<br><br><br><br><br>
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-longtermdependencies.png")
+```
+
+]
+
+.footnote[Image: [Christopher Olah](https://colah.github.io/)]
+
+---
+# Multiple units
+
+.pull-left[
+
+The number of units we specify in a recurrent layer is analogous to [feature maps](https://misk-data-science.github.io/misk-dl/02-computer-vision.html#18)
+in CNNs. 
+
+* Each unit will be a full sequence of RNN cells
+
+* Each unit will have its own weight matrix
+
+* Results in different features of the sequence to be emphasized
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/rnn-feature-maps.png")
+```
+
+]
+
+---
+# Vanishing gradient
+
+.pull-left.font90[
+
+* When doing back propagation, each node in a layer calculates its gradient with
+  respect to the effects of the gradients in the layer before it.
+
+* If the adjustments to the layers before it is small, then adjustments to the
+  current layer will be even smaller.
+  
+* This causes gradients to ___exponentially shrink___ as they back propagate
+
+* Small gradients mean small adjustments, which causes the early layers not to learn.
+
+.center.red[___RNNs can't learn long-range dependencies!___]
+
+]
+
+.pull-right[
+
+<br><br><br>
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://cdn-images-1.medium.com/max/1600/1*Ku54qmCryZVBaIc6g8rjGA.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# LSTMs
+
+.font120[Similar in nature to RNNs but have additional features to help fight the short-term memory issue of RNNs.]
+
+---
+# LSTMs `r emo::ji("face_screaming_in_fear")`
+
+.font120[Similar in nature to RNNs but have additional features to help fight the short-term memory issue of RNNs.]
+
+```{r, echo=FALSE, out.height="60%", out.width="60%", fig.align='center'}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*0f8r3Vd-i4ueYND1CUrhMA.png")
+```
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Forget gate
+
+.pull-left[
+
+* Information from the previous hidden state and information from the current input is passed through the sigmoid activation function. 
+
+* Values come out between 0 and 1
+   - closer to 0 means to forget
+   - closer to 1 means to remember
+
+<br>
+.center.bold[Decides what information should be thrown away or kept]
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*GjehOa513_BgpDDP6Vkw2Q.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Input gate
+
+.pull-left[
+
+* Step 1: 
+   - `sigmoid(hidden state + current input)`
+   - decides which values we’ll update
+
+* Step 2:
+   - `tahn(hidden state + current input)`
+   - creates vector of new candidate info to be added to the state
+
+* Step 3:
+   - `Step 1 output x Step 2 output`
+
+.center.bold[Decides what new information we’re going to store in the cell state]
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*TTmYy7Sy8uUXxUXfzmoKbA.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Cell state
+
+.pull-left[
+
+* Use outputs of previous gates to update current cell state
+
+* The cell state gets pointwise multiplied by the forget vector. This has a possibility of dropping values in the cell state if it gets multiplied by values near 0. 
+
+* Then we take the output from the input gate and do a pointwise addition which updates the cell state to new values that the neural network finds relevant.
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*S0rXIeO_VoUVOyrYHckUWg.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Output gate
+
+.pull-left[
+
+* Step 1: 
+   - `sigmoid(hidden state + current input)`
+   - decides how to filter our current cell state
+
+* Step 2:
+   - `tahn(hidden state + current input)`
+   - regulates our current cell state values
+
+* Step 3:
+   - `Step 1 output x Step 2 output`
+
+.center.bold[Decides what new information to pass along as our hidden state]
+
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*VOXRGhOShoWWks6ouoDN3Q.gif")
+```
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Computational complexity
+
+```{r, echo=FALSE, fig.align='center', out.height="35%", out.width="35%"}
+knitr::include_graphics("images/still_waiting.jpeg")
+```
+
+---
+# Variants
+
+Many variants exists...
+
+* Learning to forget [`r anicon::aia("google-scholar", animate = 'tada', anitype="hover")`](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C47&q=Recurrent+nets+that+time+and+count&btnG=)
+
+* Gate recurrent unit [`r anicon::aia("google-scholar", animate = 'tada', anitype="hover")`](https://arxiv.org/abs/1406.1078)
+
+* Depth gated RNNs [`r anicon::aia("google-scholar", animate = 'tada', anitype="hover")`](https://arxiv.org/pdf/1508.03790v2.pdf)
+
+* Clockwork RNNs [`r anicon::aia("google-scholar", animate = 'tada', anitype="hover")`](https://arxiv.org/pdf/1402.3511v1.pdf)
+
+* Which is best?  .bold[Depends...]
+   - [Greff, et al. (2015)](http://arxiv.org/pdf/1503.04069.pdf)
+   - [Jozefowicz, et al. (2015)](http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)
+
+---
+# Learn more
+
+- [Deep Learning with R](https://www.manning.com/books/deep-learning-with-r), Ch. 6
+
+- [Colah's blog](https://colah.github.io/)
+
+- [Michael Phi's "Illustrated" blog](http://www.kurious.pub/)
+
+- [Rohan & Lenny: Recurrent Neural Networks & LSTMs](https://ayearofai.com/rohan-lenny-3-recurrent-neural-networks-10300100899b)
+
+- [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+
+---
+class: clear, center, middle
+
+background-image: url(images/any-questions.jpg)
+background-position: center
+background-size: cover
+
+---
+# Back home
+
+<br><br><br><br>
+[.center[`r anicon::faa("home", size = 10, animate = FALSE)`]](https://github.com/misk-data-science/misk-dl)
+
+.center[https://github.com/misk-data-science/misk-dl]

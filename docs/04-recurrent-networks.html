@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Recurrent Networks</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Misk Academy" />
+    <link href="libs/academicons-1.8.0/css/academicons.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome-animation-1.0/font-awesome-animation-emi.css" rel="stylesheet" />
+    <script src="libs/fontawesome-5.0.13/js/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide
+&lt;a href="https://github.com/misk-data-science/misk-dl"&gt;&lt;img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"&gt;&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# .font200.center[Recurrent Networks]
+
+---
+# Text is a sequence of information
+
+.pull-left[
+
+![](images/sequential-text.gif)&lt;!-- --&gt;
+
+]
+
+--
+
+.pull-right[
+
+Sometimes our context is nearby:
+
+_.center[I grew up in .blue[France] and speak .red[French]]_
+
+&lt;br&gt;
+
+Sometimes we need distant context:
+
+_.center[My father worked for the .blue[French] retailer .blue[Carrefour] and I
+grew up in a little village called .blue[La Roque-Gageac], which is on the north
+bank of the .blue[Dordogne River]. Consequently, I learned to speak .red[French]]_
+
+]
+
+---
+# RNNs
+
+.font120[RNNs are just a looping mechanism that allows us to retain information from
+previous states.]
+
+--
+
+.center[We typically see images such as this to represent RNNs:]
+
+&lt;img src="https://cdn-images-1.medium.com/max/1600/1*T_ECcHZWpjn0Ki4_4BEzow.gif" style="display: block; margin: auto;" /&gt;
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# RNNs
+
+.font120[RNNs are just a looping mechanism that allows us to retain information from
+previous states.]
+
+.center[But if we unroll this layer, its just a multi-layer perceptron:]
+
+&lt;img src="images/rnn-unroll.gif" style="display: block; margin: auto;" /&gt;
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Hidden state
+
+.pull-left[
+
+This passing of information from previous states is what we call the
+.blue[___hidden state___].
+
+It is common for the hidden state to be analogized to .blue[memory].
+
+]
+
+.pull-right[
+
+![](https://miro.medium.com/max/1400/1*o-Cq5U8-tfa1_ve2Pf3nfg.gif)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Hidden state
+
+.pull-left[
+
+1. The previous hidden state and the current state input are combined to form a
+vector. That vector now has information on the current input and previous inputs. 
+
+2. The vector goes through the __tanh__ activation, 
+
+3. The output is the new hidden state, or the memory of the network.
+
+]
+
+.pull-right[
+
+&lt;img src="https://miro.medium.com/max/1400/1*WMnFSJHzOloFlJHU6fVN-g.gif" width="110%" /&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Tanh activation
+
+.pull-left[
+
+The .blue[__tanh__] activation helps to keep values between -1 and 1.
+
+]
+
+.pull-right[
+
+![](https://miro.medium.com/max/1400/1*iRlEg1GBKRzGTre5aOQUCg.gif)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Weights
+
+.pull-left[
+
+The .blue[weights] of the network will determine what parts of the sequence to
+emphasize (aka .blue[_remember_]) to accurately predict what comes next.
+
+&lt;br&gt;
+
+.center[.opacity20[My father worked for the] .blue[French] .opacity20[retailer]
+.blue[Carrefour] .opacity20[and I grew up in a little village called]
+.blue[La Roque-Gageac], .opacity20[which is on the north bank of the]
+.blue[Dordogne River]. .opacity20[Consequently, I learned to speak] .red[French]]
+
+]
+
+.pull-right[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+![](https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-longtermdependencies.png)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Christopher Olah](https://colah.github.io/)]
+
+---
+# Multiple units
+
+.pull-left[
+
+The number of units we specify in a recurrent layer is analogous to [feature maps](https://misk-data-science.github.io/misk-dl/02-computer-vision.html#18)
+in CNNs. 
+
+* Each unit will be a full sequence of RNN cells
+
+* Each unit will have its own weight matrix
+
+* Results in different features of the sequence to be emphasized
+
+]
+
+.pull-right[
+
+&lt;img src="images/rnn-feature-maps.png" width="960" /&gt;
+
+]
+
+---
+# Vanishing gradient
+
+.pull-left.font90[
+
+* When doing back propagation, each node in a layer calculates its gradient with
+  respect to the effects of the gradients in the layer before it.
+
+* If the adjustments to the layers before it is small, then adjustments to the
+  current layer will be even smaller.
+  
+* This causes gradients to ___exponentially shrink___ as they back propagate
+
+* Small gradients mean small adjustments, which causes the early layers not to learn.
+
+.center.red[___RNNs can't learn long-range dependencies!___]
+
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+![](https://cdn-images-1.medium.com/max/1600/1*Ku54qmCryZVBaIc6g8rjGA.gif)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# LSTMs
+
+.font120[Similar in nature to RNNs but have additional features to help fight the short-term memory issue of RNNs.]
+
+---
+# LSTMs 😱
+
+.font120[Similar in nature to RNNs but have additional features to help fight the short-term memory issue of RNNs.]
+
+&lt;img src="https://miro.medium.com/max/1400/1*0f8r3Vd-i4ueYND1CUrhMA.png" width="60%" height="60%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Forget gate
+
+.pull-left[
+
+* Information from the previous hidden state and information from the current input is passed through the sigmoid activation function. 
+
+* Values come out between 0 and 1
+   - closer to 0 means to forget
+   - closer to 1 means to remember
+
+&lt;br&gt;
+.center.bold[Decides what information should be thrown away or kept]
+]
+
+.pull-right[
+
+![](https://miro.medium.com/max/1400/1*GjehOa513_BgpDDP6Vkw2Q.gif)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Input gate
+
+.pull-left[
+
+* Step 1: 
+   - `sigmoid(hidden state + current input)`
+   - decides which values we’ll update
+
+* Step 2:
+   - `tahn(hidden state + current input)`
+   - creates vector of new candidate info to be added to the state
+
+* Step 3:
+   - `Step 1 output x Step 2 output`
+
+.center.bold[Decides what new information we’re going to store in the cell state]
+
+]
+
+.pull-right[
+
+![](https://miro.medium.com/max/1400/1*TTmYy7Sy8uUXxUXfzmoKbA.gif)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Cell state
+
+.pull-left[
+
+* Use outputs of previous gates to update current cell state
+
+* The cell state gets pointwise multiplied by the forget vector. This has a possibility of dropping values in the cell state if it gets multiplied by values near 0. 
+
+* Then we take the output from the input gate and do a pointwise addition which updates the cell state to new values that the neural network finds relevant.
+
+]
+
+.pull-right[
+
+![](https://miro.medium.com/max/1400/1*S0rXIeO_VoUVOyrYHckUWg.gif)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Output gate
+
+.pull-left[
+
+* Step 1: 
+   - `sigmoid(hidden state + current input)`
+   - decides how to filter our current cell state
+
+* Step 2:
+   - `tahn(hidden state + current input)`
+   - regulates our current cell state values
+
+* Step 3:
+   - `Step 1 output x Step 2 output`
+
+.center.bold[Decides what new information to pass along as our hidden state]
+
+
+]
+
+.pull-right[
+
+![](https://miro.medium.com/max/1400/1*VOXRGhOShoWWks6ouoDN3Q.gif)&lt;!-- --&gt;
+
+]
+
+.footnote[Image: [Michael Phi](http://www.kurious.pub/)]
+
+---
+# Computational complexity
+
+&lt;img src="images/still_waiting.jpeg" width="35%" height="35%" style="display: block; margin: auto;" /&gt;
+
+---
+# Variants
+
+Many variants exists...
+
+* Learning to forget [<span>&lt;i class="ai  ai-google-scholar faa-tada animated-hover "&gt;&lt;/i&gt;</span>](https://scholar.google.com/scholar?hl=en&amp;as_sdt=0%2C47&amp;q=Recurrent+nets+that+time+and+count&amp;btnG=)
+
+* Gate recurrent unit [<span>&lt;i class="ai  ai-google-scholar faa-tada animated-hover "&gt;&lt;/i&gt;</span>](https://arxiv.org/abs/1406.1078)
+
+* Depth gated RNNs [<span>&lt;i class="ai  ai-google-scholar faa-tada animated-hover "&gt;&lt;/i&gt;</span>](https://arxiv.org/pdf/1508.03790v2.pdf)
+
+* Clockwork RNNs [<span>&lt;i class="ai  ai-google-scholar faa-tada animated-hover "&gt;&lt;/i&gt;</span>](https://arxiv.org/pdf/1402.3511v1.pdf)
+
+* Which is best?  .bold[Depends...]
+   - [Greff, et al. (2015)](http://arxiv.org/pdf/1503.04069.pdf)
+   - [Jozefowicz, et al. (2015)](http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf)
+
+---
+# Learn more
+
+- [Deep Learning with R](https://www.manning.com/books/deep-learning-with-r), Ch. 6
+
+- [Colah's blog](https://colah.github.io/)
+
+- [Michael Phi's "Illustrated" blog](http://www.kurious.pub/)
+
+- [Rohan &amp; Lenny: Recurrent Neural Networks &amp; LSTMs](https://ayearofai.com/rohan-lenny-3-recurrent-neural-networks-10300100899b)
+
+- [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+
+---
+class: clear, center, middle
+
+background-image: url(images/any-questions.jpg)
+background-position: center
+background-size: cover
+
+---
+# Back home
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+[.center[<span>&lt;i class="fas  fa-home fa-10x faa-FALSE animated "&gt;&lt;/i&gt;</span>]](https://github.com/misk-data-science/misk-dl)
+
+.center[https://github.com/misk-data-science/misk-dl]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
