@@ -259,7 +259,7 @@ plot(history) +
 
 Our model above does ok but definitely has room for improvement. One approach 
 to improve performance is to collect more data. Unfortunately, this is not always 
-an option. An alternative is to use ___image augmentation___. [ℹ️](http://bit.ly/dl-03#38)
+an option. An alternative is to use ___image augmentation___. [ℹ️](https://misk-data-science.github.io/misk-dl/02-computer-vision.html#38)
 
 ```{r image-augmentation}
 datagen <- image_data_generator(
@@ -417,7 +417,7 @@ plot(history) +
 
 We can always save our models as h5 files. Let's save this model as we will use
 it one of the "extras" notebooks to illustrate how we can visualize CNNs (see
-this notebook https://rstudio-conf-2020.github.io/dl-keras-tf/notebooks/visualizing-what-cnns-learn.nb.html).
+this notebook https://misk-data-science.github.io/misk-dl/notebooks/99x6-visualizing-what-cnns-learn.nb.html).
 
 ```{r save-model}
 model %>% save_model_hdf5("cats_and_dogs_small_1.h5")

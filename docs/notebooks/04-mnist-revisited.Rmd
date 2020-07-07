@@ -13,7 +13,7 @@ ggplot2::theme_set(ggplot2::theme_minimal())
 
 In this example, we are going to revisit the MNIST data set but use a CNN to 
 classify the digits. This will take us one step closer to image classification 
-and you will learn the fundamental concepts behind CNNs. [ℹ️](http://bit.ly/dl-03)
+and you will learn the fundamental concepts behind CNNs. [ℹ️](https://misk-data-science.github.io/misk-dl/02-computer-vision.html#1)
 
 Learning objectives:
 
@@ -109,7 +109,7 @@ summary(model)
 
 These steps are the same as before. However, you will notice that training takes 
 longer, which is due to the added CNN procedure. While this model is training,
-let's discuss what's happening under the hood of a CNN [ℹ️](http://bit.ly/dl-03#13).
+let's discuss what's happening under the hood of a CNN [ℹ️](https://misk-data-science.github.io/misk-dl/02-computer-vision.html#13).
 
 Although we used a fairly basic model without optimizing the learning rate,
 model capacity, batch, etc., you will also notice that our model performance is
