@@ -403,6 +403,11 @@ class: inverse, center, middle
 .center.white[_Let’s start get started!_]
 
 ---
+# Open notebook 1
+
+&lt;img src="images/notebook1.png" width="1203" style="display: block; margin: auto;" /&gt;
+
+---
 # Origination
 
 .scrollable90[
@@ -993,7 +998,7 @@ network &lt;- keras_model_sequential() %&gt;%
    - You will be introduced to other activation functions but ReLU should nearly
    always be your default for hidden layers
    
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-41-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-42-1.png" style="display: block; margin: auto;" /&gt;
    
 
 ]
@@ -1007,7 +1012,7 @@ network &lt;- keras_model_sequential() %&gt;%
 
 .pull-left[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-43-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-44-1.png" style="display: block; margin: auto;" /&gt;
    
 How can a simple semi-linear transformation work so well?
 
@@ -1018,7 +1023,7 @@ How can a simple semi-linear transformation work so well?
 
 .pull-left[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-44-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-45-1.png" style="display: block; margin: auto;" /&gt;
    
 How can a simple semi-linear transformation work so well?
 
@@ -1177,7 +1182,7 @@ Two primary arguments of concern for the final output layer:
 
 .pull-right.center[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-56-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-57-1.png" style="display: block; margin: auto;" /&gt;
 
 `\(f(y) = \frac{1}{1 + e^{-y}}\)`
 
@@ -1565,32 +1570,10 @@ to update the weights so that we improve the model's performance.
 .pull-right[
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-74-1.png" style="display: block; margin: auto;" /&gt;
-
-]
-
-
----
-# Derivatives
-
-_Sensitivity_ is just the change in one thing per 1 unit change in another
-
-
-.pull-left[
-.font100[
-$$= \frac{\text{Change in temperature error}}{\text{Change in shower handle position}} $$
-]
-&lt;br&gt;
-.font100[
-$$= \frac{\Delta \text{temperature error}}{\Delta \text{shower handle position}} $$
-]
-]
-
-.pull-right[
-&lt;br&gt;
 &lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-75-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
+
 
 ---
 # Derivatives
@@ -1611,6 +1594,28 @@ $$= \frac{\Delta \text{temperature error}}{\Delta \text{shower handle position}}
 .pull-right[
 &lt;br&gt;
 &lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-76-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+# Derivatives
+
+_Sensitivity_ is just the change in one thing per 1 unit change in another
+
+
+.pull-left[
+.font100[
+$$= \frac{\text{Change in temperature error}}{\text{Change in shower handle position}} $$
+]
+&lt;br&gt;
+.font100[
+$$= \frac{\Delta \text{temperature error}}{\Delta \text{shower handle position}} $$
+]
+]
+
+.pull-right[
+&lt;br&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-77-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1643,7 +1648,7 @@ $$= \frac{\text{d(temperature)}}{\text{d(shower handle position)}} $$
 .pull-right[
 
 &lt;br&gt;
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-77-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-78-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1661,13 +1666,7 @@ What if we have more than one variable?
 
 .pull-right[
 
-
-```
-## 'RandomFieldsUtils' will NOT use OMP
-## 'RandomFields' will NOT use OMP
-```
-
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-79-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-80-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1693,7 +1692,7 @@ $$= \frac{\partial \text{ temperature}}{\partial \text{ shower handle position}}
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-80-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-81-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1720,7 +1719,7 @@ minimum.
 
 &lt;br&gt;
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-81-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-82-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1745,7 +1744,7 @@ minimum.
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-82-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-83-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1795,7 +1794,7 @@ layer as `\(\partial \text{layer}_2 \times \partial \text{layer}_1 \Rightarrow \
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-84-1.gif" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-85-1.gif" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1992,7 +1991,7 @@ history &lt;- network %&gt;%
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-90-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-91-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -2017,7 +2016,7 @@ history &lt;- network %&gt;%
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-91-1.gif" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-92-1.gif" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -2044,7 +2043,7 @@ history &lt;- network %&gt;%
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-92-1.gif" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-93-1.gif" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -2060,7 +2059,7 @@ history &lt;- network %&gt;%
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-93-1.gif" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-94-1.gif" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -2105,12 +2104,11 @@ history &lt;- network %&gt;%
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-96-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-97-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
-
---
+---
 # Validation
 
 .pull-left[
@@ -2124,7 +2122,7 @@ history &lt;- network %&gt;%
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-97-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-98-1.png" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -2149,7 +2147,7 @@ history &lt;- network %&gt;%
 
 .pull-right[
 
-&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-98-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="01-introduction-slides_files/figure-html/unnamed-chunk-99-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 

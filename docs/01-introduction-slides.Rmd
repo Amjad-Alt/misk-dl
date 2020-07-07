@@ -463,6 +463,13 @@ class: inverse, center, middle
 .center.white[_Let’s start get started!_]
 
 ---
+# Open notebook 1
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/notebook1.png")
+```
+
+---
 # Origination
 
 .scrollable90[
@@ -2513,8 +2520,7 @@ history %>%
 
 ]
 
-
---
+---
 # Validation
 
 .pull-left[
