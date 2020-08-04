@@ -14,12 +14,10 @@
 
 
 
-class: title-slide
-&lt;a href="https://github.com/misk-data-science/misk-dl"&gt;&lt;img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"&gt;&lt;/a&gt;
+class: misk-title-slide   
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-# .font200.center[Word Embeddings]
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# .font140[Word Embeddings]
 
 ---
 
@@ -202,15 +200,16 @@ Embeddings for "King" based on Wikipedia (2014 file dump) and Gigaword 5 (2 year
 
 ```r
 king_embeddings
-##   [1] -0.323070 -0.876160  0.219770  0.252680  0.229760  0.738800 -0.379540 -0.353070 -0.843690 -1.111300 -0.302660  0.331780
-##  [13] -0.251130  0.304480 -0.077491 -0.898150  0.092496 -1.140700 -0.583240  0.668690 -0.231220 -0.958550  0.282620 -0.078848
-##  [25]  0.753150  0.265840  0.342200 -0.339490  0.956080  0.065641  0.457470  0.398350  0.579650  0.392670 -0.218510  0.587950
-##  [37] -0.559990  0.633680 -0.043983 -0.687310 -0.378410  0.380260  0.616410 -0.882690 -0.123460 -0.379280 -0.383180  0.238680
-##  [49]  0.668500 -0.433210 -0.110650  0.081723  1.156900  0.789580 -0.212230 -2.321100 -0.678060  0.445610  0.657070  0.104500
-##  [61]  0.462170  0.199120  0.258020  0.057194  0.534430 -0.431330 -0.343110  0.597890 -0.584170  0.068995  0.239440 -0.851810
-##  [73]  0.303790 -0.341770 -0.257460 -0.031101 -0.162850  0.451690 -0.916270  0.645210  0.732810 -0.227520  0.302260  0.044801
-##  [85] -0.837410  0.550060 -0.525060 -1.735700  0.475100 -0.704870  0.056939 -0.713200  0.089623  0.413940 -1.336300 -0.619150
-##  [97] -0.330890 -0.528810  0.164830 -0.988780
+##   [1] -0.323070 -0.876160  0.219770  0.252680  0.229760  0.738800 -0.379540 -0.353070 -0.843690 -1.111300 -0.302660
+##  [12]  0.331780 -0.251130  0.304480 -0.077491 -0.898150  0.092496 -1.140700 -0.583240  0.668690 -0.231220 -0.958550
+##  [23]  0.282620 -0.078848  0.753150  0.265840  0.342200 -0.339490  0.956080  0.065641  0.457470  0.398350  0.579650
+##  [34]  0.392670 -0.218510  0.587950 -0.559990  0.633680 -0.043983 -0.687310 -0.378410  0.380260  0.616410 -0.882690
+##  [45] -0.123460 -0.379280 -0.383180  0.238680  0.668500 -0.433210 -0.110650  0.081723  1.156900  0.789580 -0.212230
+##  [56] -2.321100 -0.678060  0.445610  0.657070  0.104500  0.462170  0.199120  0.258020  0.057194  0.534430 -0.431330
+##  [67] -0.343110  0.597890 -0.584170  0.068995  0.239440 -0.851810  0.303790 -0.341770 -0.257460 -0.031101 -0.162850
+##  [78]  0.451690 -0.916270  0.645210  0.732810 -0.227520  0.302260  0.044801 -0.837410  0.550060 -0.525060 -1.735700
+##  [89]  0.475100 -0.704870  0.056939 -0.713200  0.089623  0.413940 -1.336300 -0.619150 -0.330890 -0.528810  0.164830
+## [100] -0.988780
 ```
 
 ---
@@ -273,7 +272,7 @@ king_embeddings
 &lt;img src="images/embeddings-weights-classification.png" width="624" style="display: block; margin: auto;" /&gt;
 
 ---
-class: clear, center, middle
+class: clear, center, middle, hide-logo
 
 background-image: url(images/any-questions.jpg)
 background-position: center
@@ -377,6 +376,35 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+<style>
+.logo {
+  background-image: url(https://user-images.githubusercontent.com/6753598/86978801-c3cf3280-c14d-11ea-822a-7e65a384ed8b.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -3em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    ':not(.misk-title-slide)' +
+    ':not(.misk-section-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {

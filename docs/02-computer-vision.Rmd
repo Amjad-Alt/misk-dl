@@ -4,6 +4,8 @@ author: "Misk Academy"
 date: "2020-6-26"
 output:
   xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
     css: ["custom.css"]
     self_contained: false
     lib_dir: libs
@@ -16,12 +18,10 @@ output:
     seal: false
 ---
 
-class: title-slide
-<a href="https://github.com/misk-data-science/misk-dl"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+class: misk-title-slide   
 
-<br><br><br><br>
-
-# .font200.center[Computer Vision]
+<br><br><br><br><br><br>
+# .font140[Computer Vision]
 
 ---
 # Densely connected MLPs find common patterns
@@ -268,15 +268,10 @@ knitr::include_graphics("images/woof_meow.jpg")
 ]
 
 ---
-class: clear, center, middle
+class: misk-section-slide 
 
-.font300.bold[MNIST revisited as a CNN]
-
-.opacity[
-```{r, echo=FALSE, out.height="100%", out.width="100%"}
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png")
-```
-]
+<br><br><br><br><br><br><br>
+.bold.font250[MNIST revisited as a CNN]
 
 ---
 # The structure of CNN models
@@ -868,15 +863,10 @@ class: center
 
 
 ---
-class: clear, center, middle
+class: misk-section-slide 
 
-.font300.bold[Cats vs. Dogs]
-
-.opacity[
-```{r, echo=FALSE, out.height="85%", out.width="85%"}
-knitr::include_graphics("https://miro.medium.com/proxy/1*oB3S5yHHhvougJkPXuc8og.gif")
-```
-]
+<br><br><br><br><br><br><br>
+.bold.font250[Cats vs. Dogs]
 
 ```{r image-file-paths, echo=FALSE}
 # define the directories:
@@ -1278,10 +1268,10 @@ par(op)
 ]
 
 ---
-class: clear, center, middle
-background-image: url(images/transfer_learning_icon.png)
-background-size: cover
+class: misk-section-slide 
 
+<br><br><br><br><br><br><br>
+.bold.font250[Transfer Learning]
 
 ---
 # Two main approaches
@@ -1307,7 +1297,7 @@ knitr::include_graphics("https://s3.amazonaws.com/book.keras.io/img/ch5/swapping
 ]
 
 ---
-class: clear, center, middle
+class: clear, center, middle, hide-logo
 
 background-image: url(images/any-questions.jpg)
 background-position: center

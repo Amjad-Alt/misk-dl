@@ -604,6 +604,22 @@ a, a > code {
         background-size: cover;
       }
 
+      .misk-title-slide {
+        background-color: #FAFAFA;
+          border-top: 0px solid #FAFAFA;
+        background-image:
+          url(images/titleSlideBackground.png);
+        background-size: cover;
+      }
+
+      .misk-section-slide {
+        background-color: #FAFAFA;
+          border-top: 0px solid #FAFAFA;
+        background-image:
+          url(images/sectionSlideBackground.png);
+        background-size: cover;
+      }
+
       .title-slide {
         background-color: #FAFAFA;
           border-top: 80px solid #FAFAFA;

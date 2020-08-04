@@ -4,6 +4,8 @@ author: "Misk Academy"
 date: "2020-6-26"
 output:
   xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
     css: ["custom.css"]
     self_contained: false
     lib_dir: libs
@@ -47,17 +49,16 @@ library(dplyr)
 library(readr)
 ```
 
-class: title-slide
-<a href="https://github.com/misk-data-science/misk-dl"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+class: misk-title-slide   
 
-<br><br><br><br>
-
-# .font200.center[Deep Learning using Keras with Tensorflow backend]
+<br><br><br><br><br><br>
+# .font140[Deep Learning using Keras with Tensorflow backend]
 
 ---
-class: inverse, center, middle
+class: misk-section-slide 
 
-# What are we going to cover?
+<br><br><br><br><br><br><br>
+.bold.font250[What are we going to cover?]
 
 ---
 # Modeling purposes
@@ -326,9 +327,10 @@ knitr::include_graphics("https://media1.tenor.com/images/82ed88212e7752741e898cd
 ```
 
 ---
-class: inverse, center, middle
+class: misk-section-slide 
 
-# Why deep learning?
+<br><br><br><br><br><br><br>
+.bold.font250[Why deep learning?]
 
 ---
 class: clear, center, middle
@@ -402,9 +404,10 @@ knitr::include_graphics("images/dl-scale.png")
 .footnote[Image: [Andrew Ng](https://www.deeplearning.ai/content/uploads/2018/09/Ng-MLY01-12.pdf)]
 
 ---
-class: inverse, center, middle
+class: misk-section-slide 
 
-# Why Keras?
+<br><br><br><br><br><br><br>
+.bold.font250[Why Keras?]
 
 ---
 # Deep learning frameworks
@@ -520,11 +523,10 @@ knitr::include_graphics("images/MNIST-benchmarks.png")
 ]
 
 ---
-class: clear, center, middle
+class: misk-section-slide 
 
-.font1000.bold[`%<-%`]
-
-.font300[object unpacking]
+<br><br><br><br><br><br><br>
+.bold.font300[Object unpacking: `%<-%`]
 
 ---
 # zeallot `r anicon::faa("box-open", animate = FALSE)`
@@ -607,9 +609,11 @@ c(c(train_images, train_labels), c(test_images, test_labels)) %<-% mnist
 ]
 
 ---
-class: clear, center, middle
+class: misk-section-slide 
 
-.font1000.bold[Tensors]
+<br><br><br><br><br><br><br>
+.bold.font250[Tensors]
+
 ---
 # The .red[tensor] in TensorFlow
 
@@ -850,9 +854,10 @@ knitr::include_graphics("images/tensors_everywhere.jpeg")
 ]
 
 ---
-class: clear, center, middle
+class: misk-section-slide 
 
-.font500.bold[Network architecture]
+<br><br><br><br><br><br><br>
+.bold.font250[Network architecture]
 
 ---
 # Sequential vs functional
@@ -1440,9 +1445,10 @@ summary(network)
 ]
 
 ---
-class: clear, center, middle
+class: misk-section-slide 
 
-.font500.bold[Network compilation]
+<br><br><br><br><br><br><br>
+.bold.font250[Network compilation]
 
 ---
 # Forward pass
@@ -2299,9 +2305,10 @@ knitr::include_graphics('images/compile_summary.png')
 ]
 
 ---
-class: clear, center, middle
+class: misk-section-slide 
 
-.font500.bold[Training loop]
+<br><br><br><br><br><br><br>
+.bold.font250[Training loop]
 
 ---
 # Supply data
@@ -2655,7 +2662,7 @@ knitr::include_graphics("https://media1.tenor.com/images/8e0b403d6b9f899f5a25cb3
 ]
 
 ---
-class: clear, center, middle
+class: clear, center, middle, hide-logo
 
 background-image: url(images/any-questions.jpg)
 background-position: center
