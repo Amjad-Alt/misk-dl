@@ -1,7 +1,9 @@
-Deep Learning with Keras and TensorFlow
+<img src="https://user-images.githubusercontent.com/6753598/86978801-c3cf3280-c14d-11ea-822a-7e65a384ed8b.png" align="right" width="25%" height="25%"/>
+
+Deep Learning with Keras and TensorFlow 
 ================
 
-### Misk Academy
+### Misk Academy 
 
 -----
 
